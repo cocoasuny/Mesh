@@ -57,7 +57,7 @@
 
 #include "simple_on_off_server.h"
 
-#include "light_switch_example_common.h"
+#include "common.h"
 
 /*****************************************************************************
  * Definitions
