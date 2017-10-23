@@ -75,13 +75,13 @@ void app_error_handler(uint32_t error_code, uint32_t line_number, const uint8_t 
 
 void mesh_assert_handler(uint32_t pc)
 {
-    __LOG(LOG_SRC_APP, LOG_LEVEL_ASSERT, "MESH ASSERT at 0x%.08lx\n", pc);
+    __LOG(LOG_SRC_APP, LOG_LEVEL_ERROR, "MESH ASSERT at 0x%.08lx\n", pc);
     sleep_forever(pc);
 }
 
 void HardFault_Handler(void)
 {
-    __LOG(LOG_SRC_APP, LOG_LEVEL_ASSERT, "HARDFAULT...\n");
+    __LOG(LOG_SRC_APP, LOG_LEVEL_ERROR, "HARDFAULT...\n");
     sleep_forever(1);
 }
 
