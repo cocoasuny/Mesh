@@ -297,8 +297,8 @@
               </OCR_RVCT8>
               <OCR_RVCT9>
                 <Type>0</Type>
-                <StartAddress>0x20002a58</StartAddress>
-                <Size>0xd5a8</Size>
+                <StartAddress>0x200031b0</StartAddress>
+                <Size>0xce50</Size>
               </OCR_RVCT9>
               <OCR_RVCT10>
                 <Type>0</Type>
@@ -333,9 +333,9 @@
             <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls></MiscControls>
-              <Define>NRF_MESH_TEST_BUILD=1 BEARER_ACCESS_ADDR_DEFAULT=0x527851DC NRF52 NRF52_SERIES  NRF52832 NRF52832_XXAA  S132 SOFTDEVICE_PRESENT SD_BLE_API_VERSION=5 NRF_SD_BLE_API_VERSION=5 BOARD_PCA10040  CONFIG_GPIO_AS_PINRESET</Define>
+              <Define>NRF_MESH_TEST_BUILD=1 BEARER_ACCESS_ADDR_DEFAULT=0x527851DC NRF52 NRF52_SERIES  NRF52832 NRF52832_XXAA  S132 SOFTDEVICE_PRESENT SD_BLE_API_VERSION=5 NRF_SD_BLE_API_VERSION=5  CONFIG_GPIO_AS_PINRESET</Define>
               <Undefine></Undefine>
-              <IncludePath>..\source\Application;..\source\MiddleWare\micro-ecc;..\source\MiddleWare\rtt\include;..\source\MiddleWare\rtt;..\source\nRF5_SDK_for_52832\components;..\source\nrf5_SDK_for_Mesh;..\source\nRF5_SDK_for_52832\components\softdevice\s132;..\source\nRF5_SDK_for_52832\components\softdevice\s132\headers;..\source\nrf5_SDK_for_Mesh\mesh\prov\include;..\source\nrf5_SDK_for_Mesh\mesh\prov\api;..\source\nRF5_SDK_for_52832\components\boards;..\source\nRF5_SDK_for_52832\components\drivers_nrf\hal;..\source\nRF5_SDK_for_52832\components\libraries\util;..\source\nrf5_SDK_for_Mesh\mesh\core\api;..\source\nrf5_SDK_for_Mesh\mesh\core\include;..\source\nrf5_SDK_for_Mesh\mesh\dfu\include;..\source\nrf5_SDK_for_Mesh\mesh\dfu\api;..\source\nrf5_SDK_for_Mesh\mesh\bearer\include;..\source\nrf5_SDK_for_Mesh\mesh\bearer\api;..\source\nRF5_SDK_for_52832\components\drivers_nrf\delay;..\source\nrf5_SDK_for_Mesh\mesh\access\include;..\source\nrf5_SDK_for_Mesh\mesh\access\api;..\source\nrf5_SDK_for_Mesh\models\config\include;..\source\nrf5_SDK_for_Mesh\models\health\include;..\source\nrf5_SDK_for_Mesh\models\simple_on_off\include</IncludePath>
+              <IncludePath>..\source\Application;..\source\MiddleWare\micro-ecc;..\source\MiddleWare\rtt\include;..\source\MiddleWare\rtt;..\source\nRF5_SDK_for_52832\components;..\source\nrf5_SDK_for_Mesh;..\source\nRF5_SDK_for_52832\components\softdevice\s132;..\source\nRF5_SDK_for_52832\components\softdevice\s132\headers;..\source\nrf5_SDK_for_Mesh\mesh\prov\include;..\source\nrf5_SDK_for_Mesh\mesh\prov\api;..\source\nRF5_SDK_for_52832\components\boards;..\source\nRF5_SDK_for_52832\components\drivers_nrf\hal;..\source\nRF5_SDK_for_52832\components\libraries\util;..\source\nrf5_SDK_for_Mesh\mesh\core\api;..\source\nrf5_SDK_for_Mesh\mesh\core\include;..\source\nrf5_SDK_for_Mesh\mesh\dfu\include;..\source\nrf5_SDK_for_Mesh\mesh\dfu\api;..\source\nrf5_SDK_for_Mesh\mesh\bearer\include;..\source\nrf5_SDK_for_Mesh\mesh\bearer\api;..\source\nRF5_SDK_for_52832\components\drivers_nrf\delay;..\source\nrf5_SDK_for_Mesh\mesh\access\include;..\source\nrf5_SDK_for_Mesh\mesh\access\api;..\source\nrf5_SDK_for_Mesh\models\config\include;..\source\nrf5_SDK_for_Mesh\models\health\include;..\source\nrf5_SDK_for_Mesh\models\simple_on_off\include;..\source\nRF5_SDK_for_52832\components\libraries\uart;..\source\nRF5_SDK_for_52832\components\libraries\fifo;..\source\nRF5_SDK_for_52832\components\drivers_nrf\common;..\source\nRF5_SDK_for_52832\components\drivers_nrf\uart;..\source\nRF5_SDK_for_52832\components\libraries\experimental_log;..\source\nRF5_SDK_for_52832\components\libraries\experimental_section_vars;..\source\nRF5_SDK_for_52832\components\libraries\experimental_log\src;..\source\nRF5_SDK_for_52832\components\libraries\experimental_memobj;..\source\nRF5_SDK_for_52832\components\libraries\balloc;..\source\nRF5_SDK_for_52832\components\libraries\strerror;..\source\BSP</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -419,10 +419,27 @@
               <FileType>5</FileType>
               <FilePath>..\source\Application\sdk_config.h</FilePath>
             </File>
+            <File>
+              <FileName>platform.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\source\Application\platform.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
           <GroupName>bsp</GroupName>
+          <Files>
+            <File>
+              <FileName>bsp.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\source\BSP\bsp.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_uart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\source\BSP\bsp_uart.c</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>Drivers</GroupName>
@@ -483,7 +500,49 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>SDK52832</GroupName>
+          <GroupName>SDK52832/nRF_Drivers</GroupName>
+          <Files>
+            <File>
+              <FileName>nrf_drv_common.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\source\nRF5_SDK_for_52832\components\drivers_nrf\common\nrf_drv_common.c</FilePath>
+            </File>
+            <File>
+              <FileName>nrf_drv_uart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\source\nRF5_SDK_for_52832\components\drivers_nrf\uart\nrf_drv_uart.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>SDK52832/Libraries</GroupName>
+          <Files>
+            <File>
+              <FileName>app_uart_fifo.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\source\nRF5_SDK_for_52832\components\libraries\uart\app_uart_fifo.c</FilePath>
+            </File>
+            <File>
+              <FileName>retarget.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\source\nRF5_SDK_for_52832\components\libraries\uart\retarget.c</FilePath>
+            </File>
+            <File>
+              <FileName>app_fifo.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\source\nRF5_SDK_for_52832\components\libraries\fifo\app_fifo.c</FilePath>
+            </File>
+            <File>
+              <FileName>app_error.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\source\nRF5_SDK_for_52832\components\libraries\util\app_error.c</FilePath>
+            </File>
+            <File>
+              <FileName>app_error_weak.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\source\nRF5_SDK_for_52832\components\libraries\util\app_error_weak.c</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>SDKMesh/Access</GroupName>

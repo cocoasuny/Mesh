@@ -41,7 +41,7 @@
 #include "nrf.h"
 #include "log.h"
 
-#include "boards.h"
+#include "common.h"
 
 #if defined(NRF51) && defined(NRF_MESH_STACK_DEPTH)
 #include "stack_depth.h"
@@ -57,21 +57,21 @@ static uint8_t m_ble_evt_buffer[sizeof(ble_evt_t) + GATT_MTU_SIZE_DEFAULT];
 
 static void sleep_forever(uint32_t pc)
 {
-    NRF_GPIO->OUTSET = LEDS_MASK;
-    NRF_GPIO->OUTCLR = LEDS_MASK;
-    uint32_t irqs_masked __attribute__((unused));
-    _DISABLE_IRQS(irqs_masked);
-    while (pc)
-    {
-        /* Sleep forever */
-    }
+//    NRF_GPIO->OUTSET = LEDS_MASK;
+//    NRF_GPIO->OUTCLR = LEDS_MASK;
+//    uint32_t irqs_masked __attribute__((unused));
+//    _DISABLE_IRQS(irqs_masked);
+//    while (pc)
+//    {
+//        /* Sleep forever */
+//    }
 }
 
-void app_error_handler(uint32_t error_code, uint32_t line_number, const uint8_t * filename)
-{
-    __LOG(LOG_SRC_APP, LOG_LEVEL_ERROR, "APP_ERROR: %s:%lu: code %lu\n", filename, line_number, error_code);
-    sleep_forever(1);
-}
+//void app_error_handler(uint32_t error_code, uint32_t line_number, const uint8_t * filename)
+//{
+//    __LOG(LOG_SRC_APP, LOG_LEVEL_ERROR, "APP_ERROR: %s:%lu: code %lu\n", filename, line_number, error_code);
+//    sleep_forever(1);
+//}
 
 void mesh_assert_handler(uint32_t pc)
 {

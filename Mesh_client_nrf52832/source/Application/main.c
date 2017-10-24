@@ -41,7 +41,7 @@
 /* HAL */
 #include "nrf.h"
 #include "nrf_sdm.h"
-#include "boards.h"
+#include "platform.h"
 #include "nrf_mesh_sdk.h"
 #include "nrf_delay.h"
 
@@ -265,15 +265,15 @@ static void client_status_cb(const simple_on_off_client_t * p_self, simple_on_of
     switch (status)
     {
         case SIMPLE_ON_OFF_STATUS_ON:
-            hal_led_pin_set(BSP_LED_0 + server_index, true);
+//            hal_led_pin_set(BSP_LED_0 + server_index, true);
             break;
 
         case SIMPLE_ON_OFF_STATUS_OFF:
-            hal_led_pin_set(BSP_LED_0 + server_index, false);
+//            hal_led_pin_set(BSP_LED_0 + server_index, false);
             break;
 
         case SIMPLE_ON_OFF_STATUS_ERROR_NO_REPLY:
-            hal_led_blink_ms(LEDS_MASK, 100, 6);
+//            hal_led_blink_ms(LEDS_MASK, 100, 6);
             break;
 
         default:
@@ -282,17 +282,17 @@ static void client_status_cb(const simple_on_off_client_t * p_self, simple_on_of
     }
 
     /* Set 4th LED on when all servers are on. */
-    bool all_servers_on = true;
-    for (uint32_t i = BSP_LED_0; i < BSP_LED_0 + m_configured_devices; ++i)
-    {
-        if (!hal_led_pin_get(i))
-        {
-            all_servers_on = false;
-            break;
-        }
-    }
+//    bool all_servers_on = true;
+//    for (uint32_t i = BSP_LED_0; i < BSP_LED_0 + m_configured_devices; ++i)
+//    {
+//        if (!hal_led_pin_get(i))
+//        {
+//            all_servers_on = false;
+//            break;
+//        }
+//    }
 
-    hal_led_pin_set(BSP_LED_3, all_servers_on);
+//    hal_led_pin_set(BSP_LED_3, all_servers_on);
 }
 
 static void health_event_cb(const health_client_t * p_client, const health_client_evt_t * p_event)
@@ -330,13 +330,13 @@ static void button_event_handler(uint32_t button_number)
         case 1:
         case 2:
             /* Invert LED. */
-            status = simple_on_off_client_set(&m_clients[button_number],
-                                              !hal_led_pin_get(BSP_LED_0 + button_number));
+//            status = simple_on_off_client_set(&m_clients[button_number],
+//                                              !hal_led_pin_get(BSP_LED_0 + button_number));
             break;
         case 3:
             /* Group message: invert all LEDs. */
-            status = simple_on_off_client_set_unreliable(&m_clients[GROUP_CLIENT_INDEX],
-                                                         !hal_led_pin_get(BSP_LED_0 + button_number), 3);
+//            status = simple_on_off_client_set_unreliable(&m_clients[GROUP_CLIENT_INDEX],
+//                                                         !hal_led_pin_get(BSP_LED_0 + button_number), 3);
             break;
         default:
             break;
@@ -348,7 +348,7 @@ static void button_event_handler(uint32_t button_number)
         status == NRF_ERROR_BUSY)
     {
         __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Cannot send. Device is busy.\n");
-        hal_led_blink_ms(LEDS_MASK, 50, 4);
+//        hal_led_blink_ms(LEDS_MASK, 50, 4);
     }
     else
     {
@@ -369,18 +369,18 @@ void provisioner_config_successful_cb(void)
                                                  m_server_handles[m_configured_devices]));
     access_flash_config_store();
 
-    hal_led_pin_set(BSP_LED_0 + m_configured_devices, false);
+//    hal_led_pin_set(BSP_LED_0 + m_configured_devices, false);
     m_configured_devices++;
 
     if (m_configured_devices < SERVER_COUNT)
     {
         provisioner_wait_for_unprov(UNPROV_START_ADDRESS + m_provisioned_devices);
-        hal_led_pin_set(BSP_LED_0 + m_configured_devices, true);
+//        hal_led_pin_set(BSP_LED_0 + m_configured_devices, true);
     }
     else
     {
         __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "All servers provisioned\n");
-        hal_led_blink_ms(LEDS_MASK, 100, 4);
+//        hal_led_blink_ms(LEDS_MASK, 100, 4);
     }
 }
 
@@ -422,10 +422,11 @@ int main(void)
     __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "----- BLE Mesh Light Switch Client Demo -----\n");
 
     hal_leds_init();
-    ERROR_CHECK(hal_buttons_init(button_event_handler));
+    bsp_init();
+//    ERROR_CHECK(hal_buttons_init(button_event_handler));
 
     /* Set the first LED */
-    hal_led_pin_set(BSP_LED_0, true);
+//    hal_led_pin_set(BSP_LED_0, true);
     mesh_core_setup();
     access_setup();
 

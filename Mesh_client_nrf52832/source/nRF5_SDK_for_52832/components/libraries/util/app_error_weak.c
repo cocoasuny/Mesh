@@ -43,6 +43,8 @@
 #include "nrf_log_ctrl.h"
 #include "nrf_strerror.h"
 
+#define DEBUG
+
 #if defined(SOFTDEVICE_PRESENT) && SOFTDEVICE_PRESENT
 #include "nrf_sdm.h"
 #endif
@@ -55,7 +57,7 @@
  */
 __WEAK void app_error_fault_handler(uint32_t id, uint32_t pc, uint32_t info)
 {
-    NRF_LOG_FINAL_FLUSH();
+//    NRF_LOG_FINAL_FLUSH();
 
 #ifndef DEBUG
     NRF_LOG_ERROR("Fatal error");

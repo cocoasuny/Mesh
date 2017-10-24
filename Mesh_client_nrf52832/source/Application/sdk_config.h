@@ -46,6 +46,7 @@
 #ifdef USE_APP_CONFIG
 #include "app_config.h"
 #endif
+#include "platform.h"
 // <h> Board Support 
 
 //==========================================================
@@ -2994,7 +2995,7 @@
 // <e> UART_ENABLED - nrf_drv_uart - UART/UARTE peripheral driver
 //==========================================================
 #ifndef UART_ENABLED
-#define UART_ENABLED 0
+#define UART_ENABLED 1
 #endif
 // <o> UART_DEFAULT_CONFIG_HWFC  - Hardware Flow Control
  
@@ -3094,6 +3095,9 @@
 #define UART1_CONFIG_USE_EASY_DMA 1
 #endif
 
+#ifndef RETARGET_ENABLED
+#define RETARGET_ENABLED    1
+#endif
 // </e>
 
 // </e>
@@ -3191,6 +3195,13 @@
 
 #ifndef APP_PWM_ENABLED
 #define APP_PWM_ENABLED 0
+#endif
+
+// <q> APP_FIFO_ENABLED  - app_fifo - Software FIFO implementation
+ 
+
+#ifndef APP_FIFO_ENABLED
+#define APP_FIFO_ENABLED 1
 #endif
 
 // <e> APP_SCHEDULER_ENABLED - app_scheduler - Events scheduler
@@ -3304,7 +3315,7 @@
 // <e> APP_UART_ENABLED - app_uart - UART driver
 //==========================================================
 #ifndef APP_UART_ENABLED
-#define APP_UART_ENABLED 0
+#define APP_UART_ENABLED 1
 #endif
 // <o> APP_UART_DRIVER_INSTANCE  - UART instance used
  
