@@ -35,8 +35,12 @@
  * OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#ifndef LIGHT_SWITCH_EXAMPLE_COMMON_H__
-#define LIGHT_SWITCH_EXAMPLE_COMMON_H__
+#ifndef _COMMON_H__
+#define _COMMON_H__
+
+/* includes ----------------*/
+#include "bsp.h"
+
 
 /**
  * @defgroup LIGHT_SWITCH_EXAMPLE_COMMON Common definitions for the Light switch example
@@ -57,4 +61,4 @@
 
 /** @} end of Common definitions for the Light switch example */
 
-#endif /* LIGHT_SWITCH_EXAMPLE_COMMON_H__ */
+#endif /* _COMMON_H__ */

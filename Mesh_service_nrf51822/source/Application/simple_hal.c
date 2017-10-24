@@ -43,7 +43,7 @@
 
 #include "nrf.h"
 #include "nrf_error.h"
-#include "boards.h"
+#include "platform.h"
 #include "nrf_delay.h"
 
 #include "timer.h"

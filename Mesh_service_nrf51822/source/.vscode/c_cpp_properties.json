@@ -1,0 +1,149 @@
+{
+    "configurations": [
+        {
+            "name": "Mac",
+            "includePath": [
+                "/usr/include",
+                "/usr/local/include",
+                "${workspaceRoot}"
+            ],
+            "defines": [],
+            "intelliSenseMode": "clang-x64",
+            "browse": {
+                "path": [
+                    "/usr/include",
+                    "/usr/local/include",
+                    "${workspaceRoot}"
+                ],
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": ""
+            },
+            "macFrameworkPath": [
+                "/System/Library/Frameworks",
+                "/Library/Frameworks"
+            ]
+        },
+        {
+            "name": "Linux",
+            "includePath": [
+                "/usr/include",
+                "/usr/local/include",
+                "${workspaceRoot}"
+            ],
+            "defines": [],
+            "intelliSenseMode": "clang-x64",
+            "browse": {
+                "path": [
+                    "/usr/include",
+                    "/usr/local/include",
+                    "${workspaceRoot}"
+                ],
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": ""
+            }
+        },
+        {
+            "name": "Win32",
+            "includePath": [
+                "C:/Program Files (x86)/Microsoft Visual Studio/2017/Professional/VC/Tools/MSVC/14.10.25017/include/*",
+                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.10240.0/ucrt",
+                "${workspaceRoot}",
+                "${workspaceRoot}/Application",
+                "${workspaceRoot}/BSP",
+                "${workspaceRoot}/Drivers",
+                "${workspaceRoot}/MiddleWare/micro-ecc",
+                "${workspaceRoot}/nRF5_SDK_for_51822/components",
+                "${workspaceRoot}/nrf5_SDK_for_Mesh/mesh/access/include",
+                "${workspaceRoot}/nrf5_SDK_for_Mesh/mesh/app",
+                "${workspaceRoot}/nrf5_SDK_for_Mesh/mesh/bearer/include",
+                "${workspaceRoot}/nrf5_SDK_for_Mesh/mesh/core/include",
+                "${workspaceRoot}/nrf5_SDK_for_Mesh/mesh/dfu/include",
+                "${workspaceRoot}/nrf5_SDK_for_Mesh/mesh/prov/include",
+                "${workspaceRoot}/nrf5_SDK_for_Mesh/models/config/include",
+                "${workspaceRoot}/nrf5_SDK_for_Mesh/models/health/include",
+                "${workspaceRoot}/nrf5_SDK_for_Mesh/models/pb_remote/include",
+                "${workspaceRoot}/nrf5_SDK_for_Mesh/models/simple_on_off/include",
+                "${workspaceRoot}/nrf5_SDK_for_Mesh/tools",
+                "${workspaceRoot}/nRF5_SDK_for_51822/components/softdevice/common/softdevice_handler",
+                "${workspaceRoot}/nrf5_SDK_for_Mesh/mesh/prov/api",
+                "${workspaceRoot}/nrf5_SDK_for_Mesh/mesh/core/api",
+                "${workspaceRoot}/nrf5_SDK_for_Mesh/mesh/dfu/api",
+                "${workspaceRoot}/nRF5_SDK_for_51822/components/boards",
+                "${workspaceRoot}/nRF5_SDK_for_51822/components/drivers_nrf/hal",
+                "${workspaceRoot}/nRF5_SDK_for_51822/components/libraries/util",
+                "${workspaceRoot}/nrf5_SDK_for_Mesh/mesh/bearer/api",
+                "${workspaceRoot}/nRF5_SDK_for_51822/components/drivers_nrf/delay",
+                "${workspaceRoot}/nRF5_SDK_for_51822/components/softdevice/s130/headers",
+                "${workspaceRoot}/nrf5_SDK_for_Mesh/mesh/access/api",
+                "${workspaceRoot}/MiddleWare/rtt/include"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "NRF51822",
+                "S130",
+                "NRF_SD_BLE_API_VERSION=2",
+                "NRF51 SOFTDEVICE_PRESENT",
+                "NRF_MESH_TEST_BUILD=1",
+                "BEARER_ACCESS_ADDR_DEFAULT=0x527851DC",
+                "SD_BLE_API_VERSION=2",
+                "BOARD_PCA10028",
+                "NRF51_SERIES",
+                "CONFIG_GPIO_AS_PINRESET"                
+            ],
+            "intelliSenseMode": "msvc-x64",
+            "browse": {
+                "path": [
+                    "C:/Program Files (x86)/Microsoft Visual Studio/2017/Professional/VC/Tools/MSVC/14.10.25017/include/*",
+                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.10240.0/ucrt",
+                    "${workspaceRoot}",
+                    "${workspaceRoot}/Application",
+                    "${workspaceRoot}/BSP",
+                    "${workspaceRoot}/Drivers",
+                    "${workspaceRoot}/MiddleWare/micro-ecc",
+                    "${workspaceRoot}/nRF5_SDK_for_51822/components",
+                    "${workspaceRoot}/nrf5_SDK_for_Mesh/mesh/access/include",
+                    "${workspaceRoot}/nrf5_SDK_for_Mesh/mesh/app",
+                    "${workspaceRoot}/nrf5_SDK_for_Mesh/mesh/bearer/include",
+                    "${workspaceRoot}/nrf5_SDK_for_Mesh/mesh/core/include",
+                    "${workspaceRoot}/nrf5_SDK_for_Mesh/mesh/dfu/include",
+                    "${workspaceRoot}/nrf5_SDK_for_Mesh/mesh/prov/include",
+                    "${workspaceRoot}/nrf5_SDK_for_Mesh/models/config/include",
+                    "${workspaceRoot}/nrf5_SDK_for_Mesh/models/health/include",
+                    "${workspaceRoot}/nrf5_SDK_for_Mesh/models/pb_remote/include",
+                    "${workspaceRoot}/nrf5_SDK_for_Mesh/models/simple_on_off/include",
+                    "${workspaceRoot}/nrf5_SDK_for_Mesh/tools",
+                    "${workspaceRoot}/nRF5_SDK_for_51822/components/softdevice/common/softdevice_handler",
+                    "${workspaceRoot}/nrf5_SDK_for_Mesh/mesh/prov/api",
+                    "${workspaceRoot}/nrf5_SDK_for_Mesh/mesh/core/api",
+                    "${workspaceRoot}/nrf5_SDK_for_Mesh/mesh/dfu/api",
+                    "${workspaceRoot}/nRF5_SDK_for_51822/components/boards",
+                    "${workspaceRoot}/nRF5_SDK_for_51822/components/drivers_nrf/hal",
+                    "${workspaceRoot}/nRF5_SDK_for_51822/components/libraries/util",
+                    "${workspaceRoot}/nrf5_SDK_for_Mesh/mesh/bearer/api",
+                    "${workspaceRoot}/nRF5_SDK_for_51822/components/drivers_nrf/delay",
+                    "${workspaceRoot}/nRF5_SDK_for_51822/components/softdevice/s130/headers",
+                    "${workspaceRoot}/nrf5_SDK_for_Mesh/mesh/access/api",
+                    "${workspaceRoot}/MiddleWare/rtt/include"                   
+                ],
+                "defines": [
+                    "_DEBUG",
+                    "UNICODE",
+                    "NRF51822",
+                    "S130",
+                    "NRF_SD_BLE_API_VERSION=2",
+                    "NRF51 SOFTDEVICE_PRESENT",
+                    "NRF_MESH_TEST_BUILD=1",
+                    "BEARER_ACCESS_ADDR_DEFAULT=0x527851DC",
+                    "SD_BLE_API_VERSION=2",
+                    "BOARD_PCA10028",
+                    "NRF51_SERIES",
+                    "CONFIG_GPIO_AS_PINRESET"                
+                ],                
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": ""
+            }
+        }
+    ],
+    "version": 3
+}

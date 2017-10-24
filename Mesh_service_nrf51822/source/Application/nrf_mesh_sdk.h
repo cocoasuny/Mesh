@@ -44,7 +44,7 @@
 #endif
 #include "nrf_sdm.h"
 #include "ble.h"
-#include "boards.h"
+#include "platform.h"
 
 #include "nrf_mesh.h"
 #include "log.h"
@@ -59,7 +59,7 @@
         }                                                               \
     } while (0)
 
-void app_error_handler(uint32_t error_code, uint32_t line_number, const uint8_t * filename);
+//void app_error_handler(uint32_t error_code, uint32_t line_number, const uint8_t * filename);
 
 void mesh_assert_handler(uint32_t pc);
 

@@ -40,7 +40,7 @@
 
 /* HAL */
 #include "nrf.h"
-#include "boards.h"
+#include "platform.h"
 #include "nrf_mesh_sdk.h"
 #include "nrf_delay.h"
 #include "simple_hal.h"
@@ -87,14 +87,14 @@ static void configuration_setup(void * p_unused)
     m_server.set_cb = set_cb;
     ERROR_CHECK(simple_on_off_server_init(&m_server, 0));
     ERROR_CHECK(access_model_subscription_list_alloc(m_server.model_handle));
-    hal_led_mask_set(LEDS_MASK, true);
+//    hal_led_mask_set(LEDS_MASK, true);
 }
 
 static void configuration_complete(void * p_unused)
 {
     __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Successfully provisioned\n");
-    hal_led_mask_set(LEDS_MASK, false);
-    hal_led_blink_ms(LED_PIN_MASK, 200, 4);
+//    hal_led_mask_set(LEDS_MASK, false);
+//    hal_led_blink_ms(LED_PIN_MASK, 200, 4);
 }
 
 /*****************************************************************************
@@ -119,6 +119,8 @@ int main(void)
     __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "----- BLE Mesh Light Switch Server Demo -----\n");
 
     hal_leds_init();
+    
+    bsp_init();
 
     static const uint8_t static_auth_data[NRF_MESH_KEY_SIZE] = STATIC_AUTH_DATA;
     static nrf_mesh_node_config_params_t config_params;

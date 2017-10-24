@@ -61,6 +61,7 @@
 #include "sdk_errors.h"
 #include "app_util.h"
 #include "sdk_macros.h"
+#include "platform.h"
 
 #ifdef __cplusplus
 extern "C" {

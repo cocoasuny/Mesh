@@ -55,7 +55,7 @@
 #include "nrf_error.h"
 
 
-#if defined(__CC_ARM)
+#if defined(__CC_ARM) ||  defined(__ICCARM__)
 
 // This part is taken from MDK-ARM template file and is required here to prevent
 // linker from selecting libraries functions that use semihosting and failing
