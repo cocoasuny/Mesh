@@ -418,11 +418,13 @@ void provisioner_prov_complete_cb(const nrf_mesh_evt_prov_complete_t * p_prov_da
 
 int main(void)
 {
+    /* bsp init */
+    bsp_init();
+    
     __LOG_INIT(LOG_SRC_APP | LOG_SRC_ACCESS, LOG_LEVEL_INFO, LOG_CALLBACK_DEFAULT);
     __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "----- BLE Mesh Light Switch Client Demo -----\n");
 
-    hal_leds_init();
-    bsp_init();
+//    hal_leds_init();
 //    ERROR_CHECK(hal_buttons_init(button_event_handler));
 
     /* Set the first LED */

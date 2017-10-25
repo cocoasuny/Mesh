@@ -42,6 +42,7 @@
 #include "platform.h"
 #include "app_error.h"
 #include "bsp.h"
+#include "log.h"
 
 /**
  * @defgroup LIGHT_SWITCH_EXAMPLE_COMMON Common definitions for the Light switch example

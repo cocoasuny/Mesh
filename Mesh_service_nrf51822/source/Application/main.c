@@ -115,12 +115,11 @@ static bool set_cb(const simple_on_off_server_t * p_server, bool value)
 
 int main(void)
 {
+    /* bsp init */
+    bsp_init();
+    
     __LOG_INIT(LOG_SRC_APP | LOG_SRC_ACCESS, LOG_LEVEL_INFO, LOG_CALLBACK_DEFAULT);
     __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "----- BLE Mesh Light Switch Server Demo -----\n");
-
-    hal_leds_init();
-    
-    bsp_init();
 
     static const uint8_t static_auth_data[NRF_MESH_KEY_SIZE] = STATIC_AUTH_DATA;
     static nrf_mesh_node_config_params_t config_params;

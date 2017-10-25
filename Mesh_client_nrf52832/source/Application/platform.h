@@ -20,10 +20,7 @@
 
 
 /* debug switch define */
-#define DEBUG_BLE_CONNECT
-#define DEBUG_BLE_DFU
-#define DEBUG_TEMPERATURE
-#define DEBUG_TEMPERATURE_ADC
+#define LOG_CALLBACK_DEFAULT log_callback_stdout
 
 /* gpio define for uart */
 #define RX_PIN_NUMBER               23

@@ -39,6 +39,7 @@
 #define NRF_MESH_CONFIG_CORE_H__
 
 #include "nrf_mesh_defines.h"
+#include "common.h"
 
 /**
  * @defgroup NRF_MESH_CONFIG_CORE Mesh core configuration parameters
@@ -244,7 +245,7 @@
 
 /** Enable logging with RTT callback. */
 #ifndef LOG_ENABLE_RTT
-#define LOG_ENABLE_RTT 1
+#define LOG_ENABLE_RTT 0
 #endif
 
 /** The default callback function to use. */

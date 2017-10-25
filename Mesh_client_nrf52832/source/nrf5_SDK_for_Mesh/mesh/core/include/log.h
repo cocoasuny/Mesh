@@ -150,11 +150,11 @@ void log_callback_logview(uint32_t dbg_level, const char * p_filename, uint16_t 
     uint32_t timestamp, const char * format, va_list arguments);
 #endif
 
-#if defined(HOST)
+//#if defined(HOST)
 /** Callback function for printing debug information on stdout. */
 void log_callback_stdout(uint32_t dbg_level, const char * p_filename, uint16_t line,
     uint32_t timestamp, const char * format, va_list arguments);
-#endif
+//#endif
 
 /**
  * Initializes the logging module.

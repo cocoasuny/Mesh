@@ -39,7 +39,9 @@
 #define _COMMON_H__
 
 /* includes ----------------*/
+#include "platform.h"
 #include "bsp.h"
+#include "log.h"
 
 
 /**

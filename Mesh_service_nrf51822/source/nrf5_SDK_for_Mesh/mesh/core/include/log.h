@@ -40,9 +40,10 @@
 #include <stdarg.h>
 #include <stddef.h>
 #include <stdint.h>
-
+#include "common.h"
 #include "nrf_mesh_defines.h"
 #include "nrf_mesh_config_core.h"
+
 
 
 #if defined(HOST)
@@ -150,11 +151,11 @@ void log_callback_logview(uint32_t dbg_level, const char * p_filename, uint16_t 
     uint32_t timestamp, const char * format, va_list arguments);
 #endif
 
-#if defined(HOST)
+//#if defined(HOST)
 /** Callback function for printing debug information on stdout. */
 void log_callback_stdout(uint32_t dbg_level, const char * p_filename, uint16_t line,
     uint32_t timestamp, const char * format, va_list arguments);
-#endif
+//#endif
 
 /**
  * Initializes the logging module.
@@ -285,7 +286,7 @@ void log_vprintf(uint32_t dbg_level, const char * p_filename, uint16_t line, uin
 
 #ifndef LOG_CALLBACK_DEFAULT
 /** Default log callback. */
-#define LOG_CALLBACK_DEFAULT NULL
+//#define LOG_CALLBACK_DEFAULT NULL
 #endif
 
 #endif  /* NRF_MESH_LOG_ENABLE */

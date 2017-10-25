@@ -19,9 +19,10 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "nrf_gpio.h"
+#include "log.h"
 
 /* debug switch --------------------------------------------------------------*/
-
+#define LOG_CALLBACK_DEFAULT log_callback_stdout
 
 /* gpio and buffer define for uart */
 #define RETARGET_ENABLED	1
