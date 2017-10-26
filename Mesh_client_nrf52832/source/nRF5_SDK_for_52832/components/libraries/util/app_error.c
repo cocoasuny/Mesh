@@ -51,6 +51,8 @@
 #include "app_error.h"
 #include "nordic_common.h"
 #include "sdk_errors.h"
+#include "app_uart.h"
+#include "bsp_uart.h"
 /**@brief Function for error handling, which is called when an error has occurred.
  *
  * @warning This handler is an example only and does not fit a final product. You need to analyze
@@ -130,8 +132,20 @@ void app_error_save_and_stop(uint32_t id, uint32_t pc, uint32_t info)
             m_error_data.p_file_name  = m_error_data.p_error_info->p_file_name;
             break;
     }
-
+  
     UNUSED_VARIABLE(m_error_data);
+    
+    app_uart_close();
+    simple_uart_config();
+    char buf[100] = {0};
+    
+    sprintf(buf,"Hardfault PC:%08x,ERROR %u at %s:%u", 
+                                    m_error_data.pc,
+                                    m_error_data.err_code,
+                                    m_error_data.p_file_name,
+                                    m_error_data.line_num
+                                );
+    simple_uart_putstring((uint8_t *)buf); 
 
     // If printing is disrupted, remove the irq calls, or set the loop variable to 0 in the debugger.
     __disable_irq();

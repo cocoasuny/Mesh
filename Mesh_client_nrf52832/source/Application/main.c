@@ -441,5 +441,6 @@ int main(void)
             button_event_handler(button_number);
         }
         (void)nrf_mesh_process();
+        cli_process();
     }
 }

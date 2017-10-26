@@ -15,7 +15,7 @@
         <TargetCommonOption>
           <Device>nRF52832_xxAA</Device>
           <Vendor>Nordic Semiconductor</Vendor>
-          <PackID>NordicSemiconductor.nRF_DeviceFamilyPack.8.12.0</PackID>
+          <PackID>NordicSemiconductor.nRF_DeviceFamilyPack.8.15.0</PackID>
           <PackURL>http://developer.nordicsemi.com/nRF5_SDK/pieces/nRF_DeviceFamilyPack/</PackURL>
           <Cpu>IRAM(0x20000000,0x10000) IROM(0x00000000,0x80000) CPUTYPE("Cortex-M4") FPU2 CLOCK(12000000) ELITTLE</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
@@ -335,7 +335,7 @@
               <MiscControls></MiscControls>
               <Define>NRF_MESH_TEST_BUILD=1 BEARER_ACCESS_ADDR_DEFAULT=0x527851DC NRF52 NRF52_SERIES  NRF52832 NRF52832_XXAA  S132 SOFTDEVICE_PRESENT SD_BLE_API_VERSION=5 NRF_SD_BLE_API_VERSION=5  CONFIG_GPIO_AS_PINRESET</Define>
               <Undefine></Undefine>
-              <IncludePath>..\source\Application;..\source\MiddleWare\micro-ecc;..\source\MiddleWare\rtt\include;..\source\MiddleWare\rtt;..\source\nRF5_SDK_for_52832\components;..\source\nrf5_SDK_for_Mesh;..\source\nRF5_SDK_for_52832\components\softdevice\s132;..\source\nRF5_SDK_for_52832\components\softdevice\s132\headers;..\source\nrf5_SDK_for_Mesh\mesh\prov\include;..\source\nrf5_SDK_for_Mesh\mesh\prov\api;..\source\nRF5_SDK_for_52832\components\boards;..\source\nRF5_SDK_for_52832\components\drivers_nrf\hal;..\source\nRF5_SDK_for_52832\components\libraries\util;..\source\nrf5_SDK_for_Mesh\mesh\core\api;..\source\nrf5_SDK_for_Mesh\mesh\core\include;..\source\nrf5_SDK_for_Mesh\mesh\dfu\include;..\source\nrf5_SDK_for_Mesh\mesh\dfu\api;..\source\nrf5_SDK_for_Mesh\mesh\bearer\include;..\source\nrf5_SDK_for_Mesh\mesh\bearer\api;..\source\nRF5_SDK_for_52832\components\drivers_nrf\delay;..\source\nrf5_SDK_for_Mesh\mesh\access\include;..\source\nrf5_SDK_for_Mesh\mesh\access\api;..\source\nrf5_SDK_for_Mesh\models\config\include;..\source\nrf5_SDK_for_Mesh\models\health\include;..\source\nrf5_SDK_for_Mesh\models\simple_on_off\include;..\source\nRF5_SDK_for_52832\components\libraries\uart;..\source\nRF5_SDK_for_52832\components\libraries\fifo;..\source\nRF5_SDK_for_52832\components\drivers_nrf\common;..\source\nRF5_SDK_for_52832\components\drivers_nrf\uart;..\source\nRF5_SDK_for_52832\components\libraries\experimental_log;..\source\nRF5_SDK_for_52832\components\libraries\experimental_section_vars;..\source\nRF5_SDK_for_52832\components\libraries\experimental_log\src;..\source\nRF5_SDK_for_52832\components\libraries\experimental_memobj;..\source\nRF5_SDK_for_52832\components\libraries\balloc;..\source\nRF5_SDK_for_52832\components\libraries\strerror;..\source\BSP</IncludePath>
+              <IncludePath>..\source\Application;..\source\MiddleWare\micro-ecc;..\source\MiddleWare\rtt\include;..\source\MiddleWare\rtt;..\source\nRF5_SDK_for_52832\components;..\source\nrf5_SDK_for_Mesh;..\source\nRF5_SDK_for_52832\components\softdevice\s132;..\source\nRF5_SDK_for_52832\components\softdevice\s132\headers;..\source\nrf5_SDK_for_Mesh\mesh\prov\include;..\source\nrf5_SDK_for_Mesh\mesh\prov\api;..\source\nRF5_SDK_for_52832\components\boards;..\source\nRF5_SDK_for_52832\components\drivers_nrf\hal;..\source\nRF5_SDK_for_52832\components\libraries\util;..\source\nrf5_SDK_for_Mesh\mesh\core\api;..\source\nrf5_SDK_for_Mesh\mesh\core\include;..\source\nrf5_SDK_for_Mesh\mesh\dfu\include;..\source\nrf5_SDK_for_Mesh\mesh\dfu\api;..\source\nrf5_SDK_for_Mesh\mesh\bearer\include;..\source\nrf5_SDK_for_Mesh\mesh\bearer\api;..\source\nRF5_SDK_for_52832\components\drivers_nrf\delay;..\source\nrf5_SDK_for_Mesh\mesh\access\include;..\source\nrf5_SDK_for_Mesh\mesh\access\api;..\source\nrf5_SDK_for_Mesh\models\config\include;..\source\nrf5_SDK_for_Mesh\models\health\include;..\source\nrf5_SDK_for_Mesh\models\simple_on_off\include;..\source\nRF5_SDK_for_52832\components\libraries\uart;..\source\nRF5_SDK_for_52832\components\libraries\fifo;..\source\nRF5_SDK_for_52832\components\drivers_nrf\common;..\source\nRF5_SDK_for_52832\components\drivers_nrf\uart;..\source\nRF5_SDK_for_52832\components\libraries\experimental_log;..\source\nRF5_SDK_for_52832\components\libraries\experimental_section_vars;..\source\nRF5_SDK_for_52832\components\libraries\experimental_log\src;..\source\nRF5_SDK_for_52832\components\libraries\experimental_memobj;..\source\nRF5_SDK_for_52832\components\libraries\balloc;..\source\nRF5_SDK_for_52832\components\libraries\strerror;..\source\BSP;..\source\nRF5_SDK_for_52832\components\libraries\cli;..\source\nRF5_SDK_for_52832\components\libraries\cli\uart;..\source\nRF5_SDK_for_52832\components\libraries\atomic;..\source\nRF5_SDK_for_52832\components\libraries\queue;..\source\MiddleWare\fprintf;..\source\nRF5_SDK_for_52832\components\libraries\experimental_ringbuf;..\source\nRF5_SDK_for_52832\components\libraries\pwr_mgmt;..\source\nRF5_SDK_for_52832\components\libraries\timer</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -439,6 +439,11 @@
               <FileType>1</FileType>
               <FilePath>..\source\BSP\bsp_uart.c</FilePath>
             </File>
+            <File>
+              <FileName>bsp_cli.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\source\BSP\bsp_cli.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -541,6 +546,56 @@
               <FileName>app_error_weak.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\source\nRF5_SDK_for_52832\components\libraries\util\app_error_weak.c</FilePath>
+            </File>
+            <File>
+              <FileName>app_timer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\source\nRF5_SDK_for_52832\components\libraries\timer\app_timer.c</FilePath>
+            </File>
+            <File>
+              <FileName>app_util_platform.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\source\nRF5_SDK_for_52832\components\libraries\util\app_util_platform.c</FilePath>
+            </File>
+            <File>
+              <FileName>nrf_balloc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\source\nRF5_SDK_for_52832\components\libraries\balloc\nrf_balloc.c</FilePath>
+            </File>
+            <File>
+              <FileName>nrf_cli.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\source\nRF5_SDK_for_52832\components\libraries\cli\nrf_cli.c</FilePath>
+            </File>
+            <File>
+              <FileName>nrf_cli_uart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\source\nRF5_SDK_for_52832\components\libraries\cli\uart\nrf_cli_uart.c</FilePath>
+            </File>
+            <File>
+              <FileName>nrf_fprintf.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\source\MiddleWare\fprintf\nrf_fprintf.c</FilePath>
+            </File>
+            <File>
+              <FileName>nrf_fprintf_format.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\source\MiddleWare\fprintf\nrf_fprintf_format.c</FilePath>
+            </File>
+            <File>
+              <FileName>nrf_memobj.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\source\nRF5_SDK_for_52832\components\libraries\experimental_memobj\nrf_memobj.c</FilePath>
+            </File>
+            <File>
+              <FileName>nrf_queue.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\source\nRF5_SDK_for_52832\components\libraries\queue\nrf_queue.c</FilePath>
+            </File>
+            <File>
+              <FileName>nrf_ringbuf.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\source\nRF5_SDK_for_52832\components\libraries\experimental_ringbuf\nrf_ringbuf.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -883,26 +938,26 @@
           <targetInfo name="Mesh_client_nrf52832"/>
         </targetInfos>
       </component>
-      <component Cclass="Device" Cgroup="Startup" Cvendor="NordicSemiconductor" Cversion="8.12.0" condition="nRF52832 Device and CMSIS">
-        <package license="License\license.txt" name="nRF_DeviceFamilyPack" schemaVersion="1.3" url="http://developer.nordicsemi.com/nRF5_SDK/pieces/nRF_DeviceFamilyPack/" vendor="NordicSemiconductor" version="8.12.0"/>
+      <component Cclass="Device" Cgroup="Startup" Cvendor="NordicSemiconductor" Cversion="8.15.0" condition="nRF52832 Device and CMSIS">
+        <package license="License\license.txt" name="nRF_DeviceFamilyPack" schemaVersion="1.3" url="http://developer.nordicsemi.com/nRF5_SDK/pieces/nRF_DeviceFamilyPack/" vendor="NordicSemiconductor" version="8.15.0"/>
         <targetInfos>
           <targetInfo name="Mesh_client_nrf52832"/>
         </targetInfos>
       </component>
     </components>
     <files>
-      <file attr="config" category="source" condition="ARM Compiler" name="Device\Source\arm\arm_startup_nrf52.s" version="8.12.0">
+      <file attr="config" category="source" condition="ARM Compiler" name="Device\Source\arm\arm_startup_nrf52.s">
         <instance index="0">RTE\Device\nRF52832_xxAA\arm_startup_nrf52.s</instance>
-        <component Cclass="Device" Cgroup="Startup" Cvendor="NordicSemiconductor" Cversion="8.12.0" condition="nRF52832 Device and CMSIS"/>
-        <package license="License\license.txt" name="nRF_DeviceFamilyPack" schemaVersion="1.3" url="http://developer.nordicsemi.com/nRF5_SDK/pieces/nRF_DeviceFamilyPack/" vendor="NordicSemiconductor" version="8.12.0"/>
+        <component Cclass="Device" Cgroup="Startup" Cvendor="NordicSemiconductor" Cversion="8.15.0" condition="nRF52832 Device and CMSIS"/>
+        <package license="License\license.txt" name="nRF_DeviceFamilyPack" schemaVersion="1.3" url="http://developer.nordicsemi.com/nRF5_SDK/pieces/nRF_DeviceFamilyPack/" vendor="NordicSemiconductor" version="8.15.0"/>
         <targetInfos>
           <targetInfo name="Mesh_client_nrf52832"/>
         </targetInfos>
       </file>
-      <file attr="config" category="source" name="Device\Source\system_nrf52.c" version="8.12.0">
+      <file attr="config" category="source" name="Device\Source\system_nrf52.c">
         <instance index="0">RTE\Device\nRF52832_xxAA\system_nrf52.c</instance>
-        <component Cclass="Device" Cgroup="Startup" Cvendor="NordicSemiconductor" Cversion="8.12.0" condition="nRF52832 Device and CMSIS"/>
-        <package license="License\license.txt" name="nRF_DeviceFamilyPack" schemaVersion="1.3" url="http://developer.nordicsemi.com/nRF5_SDK/pieces/nRF_DeviceFamilyPack/" vendor="NordicSemiconductor" version="8.12.0"/>
+        <component Cclass="Device" Cgroup="Startup" Cvendor="NordicSemiconductor" Cversion="8.15.0" condition="nRF52832 Device and CMSIS"/>
+        <package license="License\license.txt" name="nRF_DeviceFamilyPack" schemaVersion="1.3" url="http://developer.nordicsemi.com/nRF5_SDK/pieces/nRF_DeviceFamilyPack/" vendor="NordicSemiconductor" version="8.15.0"/>
         <targetInfos>
           <targetInfo name="Mesh_client_nrf52832"/>
         </targetInfos>

@@ -105,7 +105,7 @@ void SD_EVT_IRQHandler(void)
 
 #if defined(S130) || defined(S132) || defined(S140)
 #include "nrf_nvic.h"
-nrf_nvic_state_t nrf_nvic_state;
+//nrf_nvic_state_t nrf_nvic_state;
 
 void softdevice_assert_handler(uint32_t id, uint32_t pc, uint32_t info)
 {
