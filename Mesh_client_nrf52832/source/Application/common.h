@@ -44,6 +44,8 @@
 #include "bsp.h"
 #include "log.h"
 #include "bsp_cli.h"
+#include "Global_Typedef.h"
+#include "main.h"
 
 /**
  * @defgroup LIGHT_SWITCH_EXAMPLE_COMMON Common definitions for the Light switch example

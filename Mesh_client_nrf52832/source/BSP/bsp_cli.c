@@ -34,6 +34,8 @@ static void cmd_print(nrf_cli_t const * p_cli, size_t argc, char **argv);
 static void cmd_print_param(nrf_cli_t const * p_cli, size_t argc, char **argv);
 static void cmd_print_all(nrf_cli_t const * p_cli, size_t argc, char **argv);
 static void cmd_python(nrf_cli_t const * p_cli, size_t argc, char **argv);
+static void cmd_ctl(nrf_cli_t const * p_cli, size_t argc, char **argv);
+static void cmd_led_ctl_param(nrf_cli_t const * p_cli, size_t argc, char **argv);
 
 /**
  * @brief Command set array
@@ -47,6 +49,15 @@ NRF_CLI_CREATE_STATIC_SUBCMD_SET(m_sub_print)
 NRF_CLI_CMD_REGISTER(print, &m_sub_print, "print", cmd_print);
 
 NRF_CLI_CMD_REGISTER(python, NULL, "python", cmd_python);
+
+/* command for led control */
+NRF_CLI_CREATE_STATIC_SUBCMD_SET(m_sub_led)
+{
+    NRF_CLI_CMD(led, NULL, "Control LEDx Status: cmd led 1 on", cmd_led_ctl_param),
+    NRF_CLI_SUBCMD_SET_END
+};
+NRF_CLI_CMD_REGISTER(cmd, &m_sub_led, "cmd", cmd_ctl);
+
 
 /**
   * @brief  initialize for CLI
@@ -134,6 +145,95 @@ static void cmd_python(nrf_cli_t const * p_cli, size_t argc, char **argv)
     UNUSED_PARAMETER(argv);
 
     nrf_cli_fprintf(p_cli, NRF_CLI_ERROR, "Nice joke ;)\r\n");
+}
+
+static void cmd_ctl(nrf_cli_t const * p_cli, size_t argc, char **argv)
+{
+    ASSERT(p_cli);
+    ASSERT(p_cli->p_ctx && p_cli->p_iface && p_cli->p_name);
+
+    if ((argc == 1) || nrf_cli_help_requested(p_cli))
+    {
+        nrf_cli_help_print(p_cli, NULL, 0);
+        return;
+    }
+
+    if (argc != 2)
+    {
+        nrf_cli_fprintf(p_cli, NRF_CLI_ERROR, "%s: bad parameter count\r\n", argv[0]);
+        return;
+    }
+
+    nrf_cli_fprintf(p_cli, NRF_CLI_ERROR, "%s: unknown parameter: %s\r\n", argv[0], argv[1]);
+}
+static void cmd_led_ctl_param(nrf_cli_t const * p_cli, size_t argc, char **argv)
+{
+//    for (size_t i = 1; i < argc; i++)
+//    {
+//        nrf_cli_fprintf(p_cli, NRF_CLI_NORMAL, "argv[%d] = %s\r\n", i, argv[i]);
+//    }
+    uint8_t ledNum = 0;
+    bool    ledStatus = OFF;
+    
+    ledNum = atoi(argv[1]);  //convernt to led number
+    if((strcmp(argv[2],"on")) == 0)
+    {
+        ledStatus = ON;
+    }
+    else if((strcmp(argv[2],"off")) == 0)
+    {
+        ledStatus = OFF;
+    }
+        
+    if(argc == 3)
+    {
+        switch(ledNum)
+        {
+            case 1:
+            {
+                if(ledStatus == ON)
+                {
+                    nrf_cli_fprintf(p_cli, NRF_CLI_NORMAL,"led %d ON\r\n",ledNum);
+                    button_event_handler(0);
+                }
+                else
+                {
+                    nrf_cli_fprintf(p_cli, NRF_CLI_NORMAL,"led %d OFF\r\n",ledNum);
+                }
+            }
+            break;
+            case 2:
+            {
+                if(ledStatus == ON)
+                {
+                     nrf_cli_fprintf(p_cli, NRF_CLI_NORMAL,"led %d ON\r\n",ledNum);
+                }
+                else
+                {
+                    nrf_cli_fprintf(p_cli, NRF_CLI_NORMAL,"led %d OFF\r\n",ledNum);
+                }
+            }
+            break;
+            case 3:
+            {
+                if(ledStatus == ON)
+                {
+                     nrf_cli_fprintf(p_cli, NRF_CLI_NORMAL,"led %d ON\r\n",ledNum);
+                }
+                else
+                {
+                    nrf_cli_fprintf(p_cli, NRF_CLI_NORMAL,"led %d OFF\r\n",ledNum);
+                }
+            }
+            break;            
+            default:break;
+        }
+    }
+    else
+    {
+        nrf_cli_fprintf(p_cli, NRF_CLI_NORMAL,"cmd parameter number err\r\n");
+    }
+    
 }
 
 #endif // NRF_MODULE_ENABLED(NRF_CLI)

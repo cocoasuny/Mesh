@@ -129,7 +129,7 @@
 #define __FILENAME__ (strrchr(__FILE__, '/') ? strrchr(__FILE__, '/') + 1 : strrchr(__FILE__, '\\') ? strrchr(__FILE__, '\\') + 1 : __FILE__)
 #endif
 
-#if NRF_MESH_LOG_ENABLE > 0
+//#if NRF_MESH_LOG_ENABLE > 0
 
 /** Global debug mask. The value of this variable is used to filter the log messages being printed. */
 extern uint32_t g_log_debug_msk;
@@ -278,17 +278,17 @@ void log_vprintf(uint32_t dbg_level, const char * p_filename, uint16_t line, uin
         log_printf(level, __FILENAME__, __LINE__, log_timestamp_get(), "%s: %s\n", msg, array_text); \
     }
 
-#else
-#define __LOG_INIT(...)
-#define __LOG(...)
-#define __LOG_XB(...)
+//#else
+//#define __LOG_INIT(...)
+//#define __LOG(...)
+//#define __LOG_XB(...)
 
-#ifndef LOG_CALLBACK_DEFAULT
-/** Default log callback. */
-#define LOG_CALLBACK_DEFAULT NULL
-#endif
+//#ifndef LOG_CALLBACK_DEFAULT
+///** Default log callback. */
+//#define LOG_CALLBACK_DEFAULT NULL
+//#endif
 
-#endif  /* NRF_MESH_LOG_ENABLE */
+//#endif  /* NRF_MESH_LOG_ENABLE */
 
 /** @} */
 #endif  /* LOG_H__ */

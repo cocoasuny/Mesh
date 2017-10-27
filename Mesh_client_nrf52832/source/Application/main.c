@@ -309,7 +309,7 @@ static void health_event_cb(const health_client_t * p_client, const health_clien
     }
 }
 
-static void button_event_handler(uint32_t button_number)
+void button_event_handler(uint32_t button_number)
 {
     __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Button %u pressed\n", button_number);
     if (m_configured_devices == 0)
