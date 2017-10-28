@@ -101,6 +101,20 @@ void cli_process(void)
 {
     nrf_cli_process(&m_cli_uart);
 }
+/**
+  * @brief  log_callback_cli
+  * @note   Log the error information by cli module
+  * @param  None
+  * @retval None
+  */
+void log_callback_cli(uint32_t dbg_level, const char * p_filename, uint16_t line,
+    uint32_t timestamp, const char * format, va_list arguments)
+{	
+	nrf_cli_fprintf(&m_cli_uart, NRF_CLI_NORMAL, "<t: %10u>, %s, %4d, ",timestamp, p_filename, line);
+	
+//    (void) vprintf(format, arguments);
+	nrf_cli_fprintf(&m_cli_uart, NRF_CLI_NORMAL, format, arguments);
+}
 
 /* Command handlers */
 static void cmd_print_param(nrf_cli_t const * p_cli, size_t argc, char **argv)
