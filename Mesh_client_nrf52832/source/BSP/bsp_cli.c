@@ -101,6 +101,22 @@ void cli_process(void)
 {
     nrf_cli_process(&m_cli_uart);
 }
+/**
+  * @brief  log_callback_cli
+  * @note   log output by cli module
+  * @param  None
+  * @retval None
+  */
+void log_callback_cli(uint32_t dbg_level, const char * p_filename, uint16_t line,
+    uint32_t timestamp, const char * format, va_list arguments)
+{
+    char buf[100] = {0};
+    
+    nrf_cli_fprintf(&m_cli_uart, NRF_CLI_NORMAL,"<t: %10u>, %s, %4d, ",timestamp, p_filename, line);
+    memset(buf,0,sizeof(buf));
+    vsprintf(buf,format,arguments);
+    nrf_cli_fprintf(&m_cli_uart, NRF_CLI_NORMAL,"%s",buf);
+}
 
 /* Command handlers */
 static void cmd_print_param(nrf_cli_t const * p_cli, size_t argc, char **argv)
@@ -194,7 +210,7 @@ static void cmd_led_ctl_param(nrf_cli_t const * p_cli, size_t argc, char **argv)
                 if(ledStatus == ON)
                 {
                     nrf_cli_fprintf(p_cli, NRF_CLI_NORMAL,"led %d ON\r\n",ledNum);
-                    button_event_handler(0);
+                    button_event_handler(1);
                 }
                 else
                 {

@@ -74,14 +74,14 @@ void log_callback_logview(uint32_t dbg_level, const char * p_filename, uint16_t 
 
 #endif
 
-//#if defined(HOST) /* For unit tests and host builds */
+#if defined(HOST) /* For unit tests and host builds */
 void log_callback_stdout(uint32_t dbg_level, const char * p_filename, uint16_t line,
     uint32_t timestamp, const char * format, va_list arguments)
 {
     printf("<t: %10u>, %s, %4d, ",timestamp, p_filename, line);
     (void) vprintf(format, arguments);
 }
-//#endif
+#endif
 
 void log_init(uint32_t mask, uint32_t level, log_callback_t callback)
 {

@@ -54,7 +54,7 @@ void bsp_init(void)
     cli_init();
     cli_start();
 
-    printf("%s",Dev_Msg);
+    //printf("%s",Dev_Msg);
 }
 
 

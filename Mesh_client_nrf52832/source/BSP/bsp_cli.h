@@ -23,7 +23,8 @@
 ret_code_t cli_init(void);
 ret_code_t cli_start(void);
 void cli_process(void);
-
+void log_callback_cli(uint32_t dbg_level, const char * p_filename, uint16_t line,
+    uint32_t timestamp, const char * format, va_list arguments);
 
 
 
