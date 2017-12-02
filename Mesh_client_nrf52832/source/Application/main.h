@@ -18,7 +18,7 @@
 #ifndef __MAIN__
 #define __MAIN__
 
-void button_event_handler(uint32_t button_number);
+void button_event_handler(uint32_t button_number,bool status);
 
 #endif // __MAIN__
 

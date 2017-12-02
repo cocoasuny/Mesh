@@ -66,6 +66,8 @@
 #define LED_PIN_NUMBER (BSP_LED_0)
 #define LED_PIN_MASK   (1u << LED_PIN_NUMBER)
 
+static bool ledStatus = false;
+
 /*****************************************************************************
  * Static data
  *****************************************************************************/
@@ -103,13 +105,15 @@ static void configuration_complete(void * p_unused)
 
 static bool get_cb(const simple_on_off_server_t * p_server)
 {
-    return hal_led_pin_get(LED_PIN_NUMBER);
+//    return hal_led_pin_get(LED_PIN_NUMBER);
+	return ledStatus;
 }
 
 static bool set_cb(const simple_on_off_server_t * p_server, bool value)
 {
     __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Got SET command to %u\n", value);
-    hal_led_pin_set(LED_PIN_NUMBER, value);
+//    hal_led_pin_set(LED_PIN_NUMBER, value);
+	ledStatus = value;
     return value;
 }
 

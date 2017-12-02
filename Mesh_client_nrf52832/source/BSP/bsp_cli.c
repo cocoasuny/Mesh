@@ -203,47 +203,16 @@ static void cmd_led_ctl_param(nrf_cli_t const * p_cli, size_t argc, char **argv)
         
     if(argc == 3)
     {
-        switch(ledNum)
-        {
-            case 1:
-            {
-                if(ledStatus == ON)
-                {
-                    nrf_cli_fprintf(p_cli, NRF_CLI_NORMAL,"led %d ON\r\n",ledNum);
-                    button_event_handler(1);
-                }
-                else
-                {
-                    nrf_cli_fprintf(p_cli, NRF_CLI_NORMAL,"led %d OFF\r\n",ledNum);
-                }
-            }
-            break;
-            case 2:
-            {
-                if(ledStatus == ON)
-                {
-                     nrf_cli_fprintf(p_cli, NRF_CLI_NORMAL,"led %d ON\r\n",ledNum);
-                }
-                else
-                {
-                    nrf_cli_fprintf(p_cli, NRF_CLI_NORMAL,"led %d OFF\r\n",ledNum);
-                }
-            }
-            break;
-            case 3:
-            {
-                if(ledStatus == ON)
-                {
-                     nrf_cli_fprintf(p_cli, NRF_CLI_NORMAL,"led %d ON\r\n",ledNum);
-                }
-                else
-                {
-                    nrf_cli_fprintf(p_cli, NRF_CLI_NORMAL,"led %d OFF\r\n",ledNum);
-                }
-            }
-            break;            
-            default:break;
-        }
+		if(ledStatus == ON)
+		{
+			nrf_cli_fprintf(p_cli, NRF_CLI_NORMAL,"led %d ON\r\n",ledNum);
+			button_event_handler(ledNum,ledStatus);
+		}
+		else
+		{
+			button_event_handler(ledNum,ledStatus);
+			nrf_cli_fprintf(p_cli, NRF_CLI_NORMAL,"led %d OFF\r\n",ledNum);
+		}
     }
     else
     {

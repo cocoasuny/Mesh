@@ -265,14 +265,17 @@ static void client_status_cb(const simple_on_off_client_t * p_self, simple_on_of
     switch (status)
     {
         case SIMPLE_ON_OFF_STATUS_ON:
+			__LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "LED%d ON\r\n",server_index);
 //            hal_led_pin_set(BSP_LED_0 + server_index, true);
             break;
 
         case SIMPLE_ON_OFF_STATUS_OFF:
+			__LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "LED%d OFF\r\n",server_index);
 //            hal_led_pin_set(BSP_LED_0 + server_index, false);
             break;
 
         case SIMPLE_ON_OFF_STATUS_ERROR_NO_REPLY:
+			__LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "SIMPLE_ON_OFF_STATUS_ERROR_NO_REPLY\r\n");
 //            hal_led_blink_ms(LEDS_MASK, 100, 6);
             break;
 
@@ -309,7 +312,7 @@ static void health_event_cb(const health_client_t * p_client, const health_clien
     }
 }
 
-void button_event_handler(uint32_t button_number)
+void button_event_handler(uint32_t button_number,bool sta)
 {
     __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Button %u pressed\n", button_number);
     if (m_configured_devices == 0)
@@ -330,8 +333,7 @@ void button_event_handler(uint32_t button_number)
         case 1:
         case 2:
             /* Invert LED. */
-//            status = simple_on_off_client_set(&m_clients[button_number],
-//                                              !hal_led_pin_get(BSP_LED_0 + button_number));
+            status = simple_on_off_client_set(&m_clients[button_number],sta);
             break;
         case 3:
             /* Group message: invert all LEDs. */
@@ -434,12 +436,12 @@ int main(void)
 
     while (true)
     {
-        int key = SEGGER_RTT_GetKey(); /* Returns -1 if there is no data. */
-        if (key >= '0' && key <= '3')
-        {
-            uint32_t button_number = key - '0';
-            button_event_handler(button_number);
-        }
+//        int key = SEGGER_RTT_GetKey(); /* Returns -1 if there is no data. */
+//        if (key >= '0' && key <= '3')
+//        {
+//            uint32_t button_number = key - '0';
+//            button_event_handler(button_number);
+//        }
         (void)nrf_mesh_process();
         cli_process();
     }
