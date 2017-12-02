@@ -61,10 +61,10 @@ static void sleep_forever(uint32_t pc)
 //    NRF_GPIO->OUTCLR = LEDS_MASK;
 //    uint32_t irqs_masked __attribute__((unused));
 //    _DISABLE_IRQS(irqs_masked);
-//    while (pc)
-//    {
-//        /* Sleep forever */
-//    }
+    while (1)
+    {
+        /* Sleep forever */
+    }
 }
 
 //void app_error_handler(uint32_t error_code, uint32_t line_number, const uint8_t * filename)
