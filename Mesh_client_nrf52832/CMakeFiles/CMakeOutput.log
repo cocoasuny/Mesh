@@ -1,0 +1,134 @@
+The target system is: Generic -  - ARM
+The host system is: Windows - 10.0.17134 - AMD64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: D:/Program Files (x86)/GNU Tools ARM Embedded/7 2017-q4-major/bin/arm-none-eabi-gcc.exe 
+Build flags: 
+Id flags: -c 
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CMakeCCompilerId.o"
+
+The C compiler identification is GNU, found in "D:/Code/Mesh/Mesh_client_nrf52832/CMakeFiles/3.12.2/CompilerIdC/CMakeCCompilerId.o"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: D:/Code/Mesh/Mesh_client_nrf52832/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/SysGCC/raspberry/bin/make.exe" "cmTC_8f48b/fast"
+C:/SysGCC/raspberry/bin/make.exe -f CMakeFiles/cmTC_8f48b.dir/build.make CMakeFiles/cmTC_8f48b.dir/build
+make.exe[1]: Entering directory `D:/Code/Mesh/Mesh_client_nrf52832/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8f48b.dir/testCCompiler.c.obj
+"D:/Program Files (x86)/GNU Tools ARM Embedded/7 2017-q4-major/bin/arm-none-eabi-gcc.exe"   --std=gnu99 -Wall -Wno-attributes -Wno-format -ffunction-sections -fdata-sections -fno-strict-aliasing -fno-builtin --short-enums    -o CMakeFiles/cmTC_8f48b.dir/testCCompiler.c.obj   -c D:/Code/Mesh/Mesh_client_nrf52832/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C static library libcmTC_8f48b.a
+"C:/Program Files/CMake/bin/cmake.exe" -P CMakeFiles/cmTC_8f48b.dir/cmake_clean_target.cmake
+"C:/Program Files/CMake/bin/cmake.exe" -E cmake_link_script CMakeFiles/cmTC_8f48b.dir/link.txt --verbose=1
+"D:/Program Files (x86)/GNU Tools ARM Embedded/7 2017-q4-major/bin/arm-none-eabi-ar.exe" qc libcmTC_8f48b.a  CMakeFiles/cmTC_8f48b.dir/testCCompiler.c.obj
+"D:/Program Files (x86)/GNU Tools ARM Embedded/7 2017-q4-major/bin/arm-none-eabi-ranlib.exe" libcmTC_8f48b.a
+make.exe[1]: Leaving directory `D:/Code/Mesh/Mesh_client_nrf52832/CMakeFiles/CMakeTmp'
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: D:/Code/Mesh/Mesh_client_nrf52832/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/SysGCC/raspberry/bin/make.exe" "cmTC_13ee5/fast"
+C:/SysGCC/raspberry/bin/make.exe -f CMakeFiles/cmTC_13ee5.dir/build.make CMakeFiles/cmTC_13ee5.dir/build
+make.exe[1]: Entering directory `D:/Code/Mesh/Mesh_client_nrf52832/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_13ee5.dir/CMakeCCompilerABI.c.obj
+"D:/Program Files (x86)/GNU Tools ARM Embedded/7 2017-q4-major/bin/arm-none-eabi-gcc.exe"   --std=gnu99 -Wall -Wno-attributes -Wno-format -ffunction-sections -fdata-sections -fno-strict-aliasing -fno-builtin --short-enums    -o CMakeFiles/cmTC_13ee5.dir/CMakeCCompilerABI.c.obj   -c "C:/Program Files/CMake/share/cmake-3.12/Modules/CMakeCCompilerABI.c"
+Linking C static library libcmTC_13ee5.a
+"C:/Program Files/CMake/bin/cmake.exe" -P CMakeFiles/cmTC_13ee5.dir/cmake_clean_target.cmake
+"C:/Program Files/CMake/bin/cmake.exe" -E cmake_link_script CMakeFiles/cmTC_13ee5.dir/link.txt --verbose=1
+"D:/Program Files (x86)/GNU Tools ARM Embedded/7 2017-q4-major/bin/arm-none-eabi-ar.exe" qc libcmTC_13ee5.a  CMakeFiles/cmTC_13ee5.dir/CMakeCCompilerABI.c.obj
+"D:/Program Files (x86)/GNU Tools ARM Embedded/7 2017-q4-major/bin/arm-none-eabi-ranlib.exe" libcmTC_13ee5.a
+make.exe[1]: Leaving directory `D:/Code/Mesh/Mesh_client_nrf52832/CMakeFiles/CMakeTmp'
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(arm-none-eabi-ld\.exe|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: D:/Code/Mesh/Mesh_client_nrf52832/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:"C:/SysGCC/raspberry/bin/make.exe" "cmTC_13ee5/fast"]
+  ignore line: [C:/SysGCC/raspberry/bin/make.exe -f CMakeFiles/cmTC_13ee5.dir/build.make CMakeFiles/cmTC_13ee5.dir/build]
+  ignore line: [make.exe[1]: Entering directory `D:/Code/Mesh/Mesh_client_nrf52832/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_13ee5.dir/CMakeCCompilerABI.c.obj]
+  ignore line: ["D:/Program Files (x86)/GNU Tools ARM Embedded/7 2017-q4-major/bin/arm-none-eabi-gcc.exe"   --std=gnu99 -Wall -Wno-attributes -Wno-format -ffunction-sections -fdata-sections -fno-strict-aliasing -fno-builtin --short-enums    -o CMakeFiles/cmTC_13ee5.dir/CMakeCCompilerABI.c.obj   -c "C:/Program Files/CMake/share/cmake-3.12/Modules/CMakeCCompilerABI.c"]
+  ignore line: [Linking C static library libcmTC_13ee5.a]
+  ignore line: ["C:/Program Files/CMake/bin/cmake.exe" -P CMakeFiles/cmTC_13ee5.dir/cmake_clean_target.cmake]
+  ignore line: ["C:/Program Files/CMake/bin/cmake.exe" -E cmake_link_script CMakeFiles/cmTC_13ee5.dir/link.txt --verbose=1]
+  ignore line: ["D:/Program Files (x86)/GNU Tools ARM Embedded/7 2017-q4-major/bin/arm-none-eabi-ar.exe" qc libcmTC_13ee5.a  CMakeFiles/cmTC_13ee5.dir/CMakeCCompilerABI.c.obj]
+  ignore line: ["D:/Program Files (x86)/GNU Tools ARM Embedded/7 2017-q4-major/bin/arm-none-eabi-ranlib.exe" libcmTC_13ee5.a]
+  ignore line: [make.exe[1]: Leaving directory `D:/Code/Mesh/Mesh_client_nrf52832/CMakeFiles/CMakeTmp']
+  ignore line: []
+  implicit libs: []
+  implicit dirs: []
+  implicit fwks: []
+
+
+
+
+Detecting C [-std=c11] compiler features compiled with the following output:
+Change Dir: D:/Code/Mesh/Mesh_client_nrf52832/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/SysGCC/raspberry/bin/make.exe" "cmTC_2f2b5/fast"
+C:/SysGCC/raspberry/bin/make.exe -f CMakeFiles/cmTC_2f2b5.dir/build.make CMakeFiles/cmTC_2f2b5.dir/build
+make.exe[1]: Entering directory `D:/Code/Mesh/Mesh_client_nrf52832/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2f2b5.dir/feature_tests.c.obj
+"D:/Program Files (x86)/GNU Tools ARM Embedded/7 2017-q4-major/bin/arm-none-eabi-gcc.exe"   --std=gnu99 -Wall -Wno-attributes -Wno-format -ffunction-sections -fdata-sections -fno-strict-aliasing -fno-builtin --short-enums    -std=c11 -o CMakeFiles/cmTC_2f2b5.dir/feature_tests.c.obj   -c D:/Code/Mesh/Mesh_client_nrf52832/CMakeFiles/feature_tests.c
+Linking C static library libcmTC_2f2b5.a
+"C:/Program Files/CMake/bin/cmake.exe" -P CMakeFiles/cmTC_2f2b5.dir/cmake_clean_target.cmake
+"C:/Program Files/CMake/bin/cmake.exe" -E cmake_link_script CMakeFiles/cmTC_2f2b5.dir/link.txt --verbose=1
+"D:/Program Files (x86)/GNU Tools ARM Embedded/7 2017-q4-major/bin/arm-none-eabi-ar.exe" qc libcmTC_2f2b5.a  CMakeFiles/cmTC_2f2b5.dir/feature_tests.c.obj
+"D:/Program Files (x86)/GNU Tools ARM Embedded/7 2017-q4-major/bin/arm-none-eabi-ranlib.exe" libcmTC_2f2b5.a
+make.exe[1]: Leaving directory `D:/Code/Mesh/Mesh_client_nrf52832/CMakeFiles/CMakeTmp'
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:1c_restrict
+    Feature record: C_FEATURE:1c_static_assert
+    Feature record: C_FEATURE:1c_variadic_macros
+
+
+Detecting C [-std=c99] compiler features compiled with the following output:
+Change Dir: D:/Code/Mesh/Mesh_client_nrf52832/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/SysGCC/raspberry/bin/make.exe" "cmTC_c9656/fast"
+C:/SysGCC/raspberry/bin/make.exe -f CMakeFiles/cmTC_c9656.dir/build.make CMakeFiles/cmTC_c9656.dir/build
+make.exe[1]: Entering directory `D:/Code/Mesh/Mesh_client_nrf52832/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c9656.dir/feature_tests.c.obj
+"D:/Program Files (x86)/GNU Tools ARM Embedded/7 2017-q4-major/bin/arm-none-eabi-gcc.exe"   --std=gnu99 -Wall -Wno-attributes -Wno-format -ffunction-sections -fdata-sections -fno-strict-aliasing -fno-builtin --short-enums    -std=c99 -o CMakeFiles/cmTC_c9656.dir/feature_tests.c.obj   -c D:/Code/Mesh/Mesh_client_nrf52832/CMakeFiles/feature_tests.c
+Linking C static library libcmTC_c9656.a
+"C:/Program Files/CMake/bin/cmake.exe" -P CMakeFiles/cmTC_c9656.dir/cmake_clean_target.cmake
+"C:/Program Files/CMake/bin/cmake.exe" -E cmake_link_script CMakeFiles/cmTC_c9656.dir/link.txt --verbose=1
+"D:/Program Files (x86)/GNU Tools ARM Embedded/7 2017-q4-major/bin/arm-none-eabi-ar.exe" qc libcmTC_c9656.a  CMakeFiles/cmTC_c9656.dir/feature_tests.c.obj
+"D:/Program Files (x86)/GNU Tools ARM Embedded/7 2017-q4-major/bin/arm-none-eabi-ranlib.exe" libcmTC_c9656.a
+make.exe[1]: Leaving directory `D:/Code/Mesh/Mesh_client_nrf52832/CMakeFiles/CMakeTmp'
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:1c_restrict
+    Feature record: C_FEATURE:0c_static_assert
+    Feature record: C_FEATURE:1c_variadic_macros
+
+
+Detecting C [-std=c90] compiler features compiled with the following output:
+Change Dir: D:/Code/Mesh/Mesh_client_nrf52832/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/SysGCC/raspberry/bin/make.exe" "cmTC_8307e/fast"
+C:/SysGCC/raspberry/bin/make.exe -f CMakeFiles/cmTC_8307e.dir/build.make CMakeFiles/cmTC_8307e.dir/build
+make.exe[1]: Entering directory `D:/Code/Mesh/Mesh_client_nrf52832/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8307e.dir/feature_tests.c.obj
+"D:/Program Files (x86)/GNU Tools ARM Embedded/7 2017-q4-major/bin/arm-none-eabi-gcc.exe"   --std=gnu99 -Wall -Wno-attributes -Wno-format -ffunction-sections -fdata-sections -fno-strict-aliasing -fno-builtin --short-enums    -std=c90 -o CMakeFiles/cmTC_8307e.dir/feature_tests.c.obj   -c D:/Code/Mesh/Mesh_client_nrf52832/CMakeFiles/feature_tests.c
+Linking C static library libcmTC_8307e.a
+"C:/Program Files/CMake/bin/cmake.exe" -P CMakeFiles/cmTC_8307e.dir/cmake_clean_target.cmake
+"C:/Program Files/CMake/bin/cmake.exe" -E cmake_link_script CMakeFiles/cmTC_8307e.dir/link.txt --verbose=1
+"D:/Program Files (x86)/GNU Tools ARM Embedded/7 2017-q4-major/bin/arm-none-eabi-ar.exe" qc libcmTC_8307e.a  CMakeFiles/cmTC_8307e.dir/feature_tests.c.obj
+"D:/Program Files (x86)/GNU Tools ARM Embedded/7 2017-q4-major/bin/arm-none-eabi-ranlib.exe" libcmTC_8307e.a
+make.exe[1]: Leaving directory `D:/Code/Mesh/Mesh_client_nrf52832/CMakeFiles/CMakeTmp'
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:0c_restrict
+    Feature record: C_FEATURE:0c_static_assert
+    Feature record: C_FEATURE:0c_variadic_macros
