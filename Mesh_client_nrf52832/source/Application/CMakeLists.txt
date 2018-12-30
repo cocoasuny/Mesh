@@ -1,21 +1,20 @@
-set(target "Demo_${PLATFORM}_${SOFTDEVICE}")
+set(target "light_switch_client_${PLATFORM}_${SOFTDEVICE}")
 
 add_executable(${target}
     "${CMAKE_CURRENT_SOURCE_DIR}/src/main.c"
-    "${CMAKE_CURRENT_SOURCE_DIR}/src/nrf_mesh_weak.c"
-    "${CMAKE_CURRENT_SOURCE_DIR}/src/simple_hal.c"
-    "${CMAKE_SOURCE_DIR}/source/bsp/src/bsp.c"
-    "${CMAKE_SOURCE_DIR}/source/bsp/src/bsp_cli.c"
-    "${CMAKE_SOURCE_DIR}/source/bsp/src/bsp_uart.c"
-    ${BSP_SOURCE_FILES}
+    "${CMAKE_SOURCE_DIR}/source/nRF5_SDK_for_mesh/mesh/stack/src/mesh_stack.c"
+    "${CMAKE_SOURCE_DIR}/source/Application/src/mesh_provisionee.c"
+    "${MBTLE_SOURCE_DIR}/source/Application/src/rtt_input.c"
+    "${CMAKE_SOURCE_DIR}/source/Application/src/simple_hal.c"
+    "${CMAKE_SOURCE_DIR}/source/Application/src/mesh_app_utils.c"
     ${BLE_SOFTDEVICE_SUPPORT_SOURCE_FILES}
     ${WEAK_SOURCE_FILES}
     ${MESH_CORE_SOURCE_FILES}
     ${MESH_BEARER_SOURCE_FILES}
     ${MESH_GATT_SOURCE_FILES}
+    ${GENERIC_ONOFF_CLIENT_SOURCE_FILES}
     ${CONFIG_SERVER_SOURCE_FILES}
     ${HEALTH_SERVER_SOURCE_FILES}
-    ${GENERIC_ONOFF_SERVER_SOURCE_FILES}
     ${ACCESS_SOURCE_FILES}
     ${MESH_APP_TIMER_SOURCE_FILES}
     ${PROV_PROVISIONEE_SOURCE_FILES}
@@ -26,15 +25,12 @@ add_executable(${target}
     ${${nRF5_SDK_VERSION}_SOURCE_FILES})
 
 target_include_directories(${target} PUBLIC
-    "${CMAKE_CURRENT_SOURCE_DIR}/include"
-    "${CMAKE_CURRENT_SOURCE_DIR}/../include"
-    "${CMAKE_SOURCE_DIR}/examples/common/include"
-    "${CMAKE_SOURCE_DIR}/external/rtt/include"
-    ${BSP_INCLUDE_DIRS}
+    "${CMAKE_CURRENT_SOURCE_DIR}/inc"
+    "${CMAKE_SOURCE_DIR}/source/MiddleWare/rtt/include"
     ${BLE_SOFTDEVICE_SUPPORT_INCLUDE_DIRS}
+    ${GENERIC_ONOFF_CLIENT_INCLUDE_DIRS}
     ${CONFIG_SERVER_INCLUDE_DIRS}
     ${HEALTH_SERVER_INCLUDE_DIRS}
-    ${GENERIC_ONOFF_SERVER_INCLUDE_DIRS}
     ${MESH_INCLUDE_DIRS}
     ${${SOFTDEVICE}_INCLUDE_DIRS}
     ${${PLATFORM}_INCLUDE_DIRS}
@@ -64,7 +60,8 @@ add_flash_target(${target})
 
 get_property(target_include_dirs TARGET ${target} PROPERTY INCLUDE_DIRECTORIES)
 add_pc_lint(${target}
-    "${CMAKE_CURRENT_SOURCE_DIR}/src/main.c;${CMAKE_SOURCE_DIR}/examples/common/src/app_onoff.c"
+    "${CMAKE_CURRENT_SOURCE_DIR}/src/main.c"
     "${target_include_dirs}"
     "${${PLATFORM}_DEFINES};${${SOFTDEVICE}_DEFINES};${${BOARD}_DEFINES}")
+
 add_ses_project(${target})

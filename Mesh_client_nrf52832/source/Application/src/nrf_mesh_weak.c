@@ -1,4 +1,4 @@
-/* Copyright (c) 2010 - 2017, Nordic Semiconductor ASA
+/* Copyright (c) 2010 - 2018, Nordic Semiconductor ASA
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without modification,
@@ -62,22 +62,25 @@ void * _weak_handler_ptr()
 
 /** prov_provisioner.c  */
 
-uint32_t __attribute__((weak, alias ("_weak_handler"))) prov_provisioner_provision(prov_common_ctx_t * p_ctx, const prov_bearer_interface_t * p_bearer, const uint8_t * p_uuid, const nrf_mesh_prov_provisioning_data_t * p_data);
+uint32_t __attribute__((weak, alias ("_weak_handler"))) prov_provisioner_provision(nrf_mesh_prov_ctx_t * p_ctx,
+                                                                                   const uint8_t * p_uuid, const nrf_mesh_prov_provisioning_data_t * p_data);
 
-uint32_t __attribute__((weak, alias ("_weak_handler"))) prov_provisioner_oob_use(prov_common_ctx_t * p_ctx, nrf_mesh_prov_oob_method_t method, uint8_t size);
+uint32_t __attribute__((weak, alias ("_weak_handler"))) prov_provisioner_oob_use(nrf_mesh_prov_ctx_t * p_ctx, nrf_mesh_prov_oob_method_t method, uint8_t action, uint8_t size);
 
-uint32_t __attribute__((weak, alias ("_weak_handler"))) prov_provisioner_auth_data(prov_common_ctx_t * p_ctx, const uint8_t * p_data, uint8_t size);
+uint32_t __attribute__((weak, alias ("_weak_handler"))) prov_provisioner_auth_data(nrf_mesh_prov_ctx_t * p_ctx, const uint8_t * p_data, uint8_t size);
 
-uint32_t __attribute__((weak, alias ("_weak_handler"))) prov_provisioner_shared_secret(prov_common_ctx_t * p_ctx, const uint8_t * p_shared);
+uint32_t __attribute__((weak, alias ("_weak_handler"))) prov_provisioner_shared_secret(nrf_mesh_prov_ctx_t * p_ctx, const uint8_t * p_shared);
 
-uint32_t __attribute__((weak, alias ("_weak_handler"))) prov_provisioner_oob_pubkey(prov_common_ctx_t * p_ctx, const uint8_t * p_key);
+uint32_t __attribute__((weak, alias ("_weak_handler"))) prov_provisioner_oob_pubkey(nrf_mesh_prov_ctx_t * p_ctx, const uint8_t * p_key);
 
 /** prov_provisionee.c  */
-uint32_t __attribute__((weak, alias ("_weak_handler"))) prov_provisionee_init(prov_common_ctx_t * p_ctx, const prov_bearer_interface_t * p_bearer, const char * URI, uint16_t oob_info_sources);
+uint32_t __attribute__((weak, alias ("_weak_handler"))) prov_provisionee_init(nrf_mesh_prov_ctx_t * p_ctx, const char * URI, uint16_t oob_info_sources);
 
-uint32_t __attribute__((weak, alias ("_weak_handler"))) prov_provisionee_auth_data(prov_common_ctx_t * p_ctx, const uint8_t * p_data, uint8_t size);
+uint32_t __attribute__((weak, alias ("_weak_handler"))) prov_provisionee_listen(nrf_mesh_prov_ctx_t * p_ctx, prov_bearer_t * p_bearer, const char * URI, uint16_t oob_info_sources);
 
-uint32_t __attribute__((weak, alias ("_weak_handler"))) prov_provisionee_shared_secret(prov_common_ctx_t * p_ctx, const uint8_t * p_shared);
+uint32_t __attribute__((weak, alias ("_weak_handler"))) prov_provisionee_auth_data(nrf_mesh_prov_ctx_t * p_ctx, const uint8_t * p_data, uint8_t size);
+
+uint32_t __attribute__((weak, alias ("_weak_handler"))) prov_provisionee_shared_secret(nrf_mesh_prov_ctx_t * p_ctx, const uint8_t * p_shared);
 
 
 /** prov_beacon.c */
@@ -85,7 +88,6 @@ void __attribute__((weak, alias ("_weak_handler"))) prov_beacon_unprov_packet_in
 
 /** prov_bearer_adv.c  */
 void __attribute__((weak, alias ("_weak_handler"))) prov_bearer_adv_packet_in(const uint8_t * p_data, uint8_t length, const nrf_mesh_rx_metadata_t * p_meta);
-const prov_bearer_interface_t * __attribute((weak, alias("_weak_handler_ptr"))) prov_bearer_adv_interface_get(void);
 
 /** prov_utils.c */
 uint32_t __attribute__((weak, alias ("_weak_handler"))) prov_utils_opt_set(nrf_mesh_opt_id_t id, const nrf_mesh_opt_t * p_opt);
@@ -93,6 +95,7 @@ uint32_t __attribute__((weak, alias ("_weak_handler"))) prov_utils_opt_get(nrf_m
 
 /** DFU  */
 uint32_t __attribute__((weak, alias ("_weak_handler"))) nrf_mesh_dfu_init(void);
+uint32_t __attribute__((weak, alias ("_weak_handler"))) nrf_mesh_dfu_enable(void);
 uint32_t __attribute__((weak, alias ("_weak_handler"))) nrf_mesh_dfu_abort(void);
 uint32_t __attribute__((weak, alias ("_weak_handler"))) nrf_mesh_dfu_bank_flash(nrf_mesh_dfu_type_t bank_type);
 uint32_t __attribute__((weak, alias ("_weak_handler"))) nrf_mesh_dfu_bank_info_get(nrf_mesh_dfu_type_t type, nrf_mesh_dfu_bank_info_t* p_bank_info);
