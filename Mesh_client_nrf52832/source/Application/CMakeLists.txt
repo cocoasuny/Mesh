@@ -7,6 +7,8 @@ add_executable(${target}
     "${MBTLE_SOURCE_DIR}/source/Application/src/rtt_input.c"
     "${CMAKE_SOURCE_DIR}/source/Application/src/simple_hal.c"
     "${CMAKE_SOURCE_DIR}/source/Application/src/mesh_app_utils.c"
+    "${CMAKE_SOURCE_DIR}/source/Application/src/mesh_adv.c"
+    "${CMAKE_SOURCE_DIR}/source/Application/src/ble_softdevice_support.c"
     ${BLE_SOFTDEVICE_SUPPORT_SOURCE_FILES}
     ${WEAK_SOURCE_FILES}
     ${MESH_CORE_SOURCE_FILES}
@@ -65,3 +67,4 @@ add_pc_lint(${target}
     "${${PLATFORM}_DEFINES};${${SOFTDEVICE}_DEFINES};${${BOARD}_DEFINES}")
 
 add_ses_project(${target})
+

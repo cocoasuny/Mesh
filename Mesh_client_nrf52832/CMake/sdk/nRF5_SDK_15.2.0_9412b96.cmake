@@ -9,6 +9,7 @@ set(nRF5_SDK_15.2.0_9412b96_INCLUDE_DIRS
     "${SDK_ROOT}/components/libraries/log"
     "${SDK_ROOT}/components/libraries/log/src"
     "${SDK_ROOT}/components/libraries/experimental_section_vars"
+    "${SDK_ROOT}/components/softdevice/common"
     "${SDK_ROOT}/components/libraries/delay")
 
 if (TOOLCHAIN STREQUAL "armcc")

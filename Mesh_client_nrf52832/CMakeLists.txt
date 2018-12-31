@@ -1,3 +1,6 @@
+#use this commands to start
+#cmake . -G "Unix Makefiles"        
+
 cmake_minimum_required(VERSION 3.6)
 
 if (NOT CMAKE_VERSION VERSION_LESS 3.9)
@@ -37,10 +40,10 @@ set(CMAKE_CONFIG_DIR "${CMAKE_SOURCE_DIR}/CMake")
 set(CMAKE_SOURCE_DIR ${CMAKE_SOURCE_DIR} CACHE STRING "" FORCE)
 
 # Needed tools for generating documentation and serial PyACI
-#find_package(PythonInterp)
-#find_package(Doxygen)
-#find_program(DOT_EXECUTABLE "dot" PATHS ENV PATH)
-#find_program(MSCGEN_EXECUTABLE "mscgen" PATHS ENV PATH)
+find_package(PythonInterp)
+find_package(Doxygen)
+find_program(DOT_EXECUTABLE "dot" PATHS ENV PATH)
+find_program(MSCGEN_EXECUTABLE "mscgen" PATHS ENV PATH)
 
 include("${CMAKE_CONFIG_DIR}/Toolchain.cmake")
 include("${CMAKE_CONFIG_DIR}/Platform.cmake")

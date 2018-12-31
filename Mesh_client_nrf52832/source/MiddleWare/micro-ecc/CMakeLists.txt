@@ -10,7 +10,7 @@ add_library(uECC_${PLATFORM} STATIC
     "${CMAKE_CURRENT_SOURCE_DIR}/uECC.c")
 target_include_directories(uECC_${PLATFORM} PUBLIC
     "${CMAKE_CURRENT_SOURCE_DIR}"
-    "${CMAKE_CURRENT_SOURCE_DIR}/../../mesh/core/include")
+    "${CMAKE_CURRENT_SOURCE_DIR}/../../nRF5_SDK_for_mesh/mesh/core/include")
 target_compile_options(uECC_${PLATFORM} PRIVATE
     ${uECC_DEFINES}
     ${${PLATFORM}_DEFINES}
