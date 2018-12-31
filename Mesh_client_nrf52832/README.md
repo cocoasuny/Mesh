@@ -1,3 +1,10 @@
+1#  使用说明
+    （1）采用Cmake进行工程管理，通过Cmake生成makefile文件，从而实现对工程的管理。
+    （2）采用Cmake编译时，采用外部编译，在build目录下，输入cmake .. -G "Unix Makefiles"   即可
+
+
+
+
 # Introduction to nRF5 SDK for Mesh
 
 The nRF5 SDK for Mesh is Nordic Semiconductor's implementation of the Bluetooth Mesh. It allows

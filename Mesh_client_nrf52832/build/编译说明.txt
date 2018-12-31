@@ -1,0 +1,1 @@
+1、采用外部编译，通过sh切换至当前路径“build”，输入cmake .. -G "Unix Makefiles"即可   
