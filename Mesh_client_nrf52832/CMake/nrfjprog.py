@@ -50,6 +50,8 @@ def select_devices(devices):
                 return []
             elif number.lower() == 'a':
                 return devices
+            elif len(devices) == 1:
+                return devices
             else:
                 ids = set([int(n) for n in number.split(",")])
                 if ids.issubset(set(device_range)):

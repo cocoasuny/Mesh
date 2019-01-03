@@ -6,6 +6,7 @@ find_program(MERGEHEX
 
 if (NRFJPROG AND MERGEHEX AND PYTHON_EXECUTABLE)
     add_custom_target(merge)
+    add_custom_target(flash)
     function(add_flash_target target)
         # Both the manual <merge> and <flash> target and depends on
         # the custom command that generates the merged hexfile.
@@ -18,6 +19,8 @@ if (NRFJPROG AND MERGEHEX AND PYTHON_EXECUTABLE)
             COMMAND ${PYTHON_EXECUTABLE} ${CMAKE_CONFIG_DIR}/nrfjprog.py ${CMAKE_CURRENT_BINARY_DIR}/${target}_merged.hex
             USES_TERMINAL
             DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/${target}_merged.hex)
+
+        add_dependencies(flash flash_${target})    
 
         add_custom_command(OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/${target}_merged.hex
             COMMAND ${MERGEHEX} -m ${${SOFTDEVICE}_HEX_FILE} ${CMAKE_CURRENT_BINARY_DIR}/${target}.hex -o ${CMAKE_CURRENT_BINARY_DIR}/${target}_merged.hex
