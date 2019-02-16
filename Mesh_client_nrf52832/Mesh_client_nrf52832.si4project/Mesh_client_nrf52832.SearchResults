@@ -1,0 +1,2 @@
+---- USE_APP_CONFIG Matches (1 in 1 files) ----
+sdk_config.h (source\Application\inc) line 46 : #ifdef USE_APP_CONFIG
