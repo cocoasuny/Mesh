@@ -1,7 +1,8 @@
 set(target "light_switch_client_${PLATFORM}_${SOFTDEVICE}")
 
-add_executable(${target}
-    "${CMAKE_CURRENT_SOURCE_DIR}/src/main.c"
+#source file defines
+set(SRC_LISTS 
+	"${CMAKE_CURRENT_SOURCE_DIR}/src/main.c"
     "${CMAKE_SOURCE_DIR}/source/nRF5_SDK_for_mesh/mesh/stack/src/mesh_stack.c"
     "${CMAKE_SOURCE_DIR}/source/Application/src/mesh_provisionee.c"
     "${MBTLE_SOURCE_DIR}/source/Application/src/rtt_input.c"
@@ -24,8 +25,14 @@ add_executable(${target}
     ${PROV_BEARER_ADV_SOURCE_FILES}
     ${PROV_BEARER_GATT_SOURCE_FILES}
     ${${PLATFORM}_SOURCE_FILES}
-    ${${nRF5_SDK_VERSION}_SOURCE_FILES})
+    ${${nRF5_SDK_VERSION}_SOURCE_FILES}
+    ${BSP_SOURCE_FILES}
+    ${MIDDLE_WARE_SOURCE_FILES}	
+	)
 
+add_executable(${target} ${SRC_LISTS})
+
+# include path defines
 target_include_directories(${target} PUBLIC
     "${CMAKE_CURRENT_SOURCE_DIR}/inc"
     "${CMAKE_SOURCE_DIR}/source/MiddleWare/rtt/include"
@@ -37,7 +44,10 @@ target_include_directories(${target} PUBLIC
     ${${SOFTDEVICE}_INCLUDE_DIRS}
     ${${PLATFORM}_INCLUDE_DIRS}
     ${${BOARD}_INCLUDE_DIRS}
-    ${${nRF5_SDK_VERSION}_INCLUDE_DIRS})
+    ${${nRF5_SDK_VERSION}_INCLUDE_DIRS}
+    ${BSP_INCLUDE_DIRS}
+    ${MIDDLE_WARE_INCLUDE_DIRS}
+    )
 
 set_target_link_options(${target}
     ${CMAKE_CURRENT_SOURCE_DIR}/linker/${PLATFORM}_${SOFTDEVICE})

@@ -1,13 +1,11 @@
-/**
- * Copyright (c) 2015 - 2018, Nordic Semiconductor ASA
- *
+/* Copyright (c) 2010 - 2017, Nordic Semiconductor ASA
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without modification,
  * are permitted provided that the following conditions are met:
  *
  * 1. Redistributions of source code must retain the above copyright notice, this
- *    list of conditions and the following disclaimer.
+ * list of conditions and the following disclaimer.
  *
  * 2. Redistributions in binary form, except as embedded into a Nordic
  *    Semiconductor ASA integrated circuit in a product or a software update for
@@ -35,57 +33,21 @@
  * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
  * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
  * OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
- *
- */
-/**@file
- *
- * @defgroup bsp_btn_ant BSP: ANT Button Module
- * @{
- * @ingroup bsp
- *
- * @brief Module for controlling ANT behavior through button actions.
- *
- * @details The application must propagate ANT events to the ANT Button Module.
- * Based on these events, the ANT Button Module configures the Board Support Package
- * to generate BSP events for certain button actions. These BSP events should then be
- * handled by the application's BSP event handler.
- *
  */
 
-#ifndef BSP_BTN_ANT_H__
-#define BSP_BTN_ANT_H__
+#ifndef _COMMON_H__
+#define _COMMON_H__
 
-#include <stdint.h>
-#include "sdk_errors.h"
-
-#ifdef __cplusplus
-extern "C" {
-#endif
-
- /**@brief Function for initializing the ANT Button Module.
- *
- * Before calling this function, the BSP module must be initialized with buttons.
- *
- * @param[in] channel       ANT channel number.
- * @param[in] channel_type  ANT channel type (see Assign Channel Parameters in ant_parameters.h: @ref ant_parameters).
- *
- * @retval NRF_SUCCESS  If initialization was successful. Otherwise, a propagated error code is
- *                      returned.
- */
-ret_code_t bsp_btn_ant_init(uint8_t channel, uint8_t channel_type);
-
-/**@brief Function for setting up wakeup buttons before going into sleep mode.
- *
- * @retval NRF_SUCCESS  If the buttons were prepared successfully. Otherwise, a propagated error
- *                      code is returned.
- */
-ret_code_t bsp_btn_ant_sleep_mode_prepare(void);
+/* includes ---------*/
+#include "platform.h"
+#include "app_error.h"
+#include "bsp.h"
+#include "log.h"
+#include "bsp_cli.h"
+//#include "Global_Typedef.h"
+#include "main.h"
 
 
-#ifdef __cplusplus
-}
-#endif
+/** @} end of Common definitions for the Light switch example */
 
-#endif /* BSP_BTN_ANT_H__ */
-
-/** @} */
+#endif /* _COMMON_H__ */

@@ -58,21 +58,17 @@ if (NOT SDK_ROOT)
 endif ()
 
 include("${CMAKE_CONFIG_DIR}/BuildType.cmake")
-include("${CMAKE_CONFIG_DIR}/Board.cmake")
 include("${CMAKE_CONFIG_DIR}/PCLint.cmake")
 include("${CMAKE_CONFIG_DIR}/GenerateSESProject.cmake")
 
 include("${CMAKE_CONFIG_DIR}/sdk/${nRF5_SDK_VERSION}.cmake")
 include("${CMAKE_CONFIG_DIR}/platform/${PLATFORM}.cmake")
 include("${CMAKE_CONFIG_DIR}/softdevice/${SOFTDEVICE}.cmake")
-include("${CMAKE_CONFIG_DIR}/board/${BOARD}.cmake")
 
 message(STATUS "SDK: ${nRF5_SDK_VERSION}")
 message(STATUS "Platform: ${PLATFORM}")
 message(STATUS "Arch: ${${PLATFORM}_ARCH}")
 message(STATUS "SoftDevice: ${SOFTDEVICE}")
-message(STATUS "Board: ${BOARD}")
-
 set(ARCH ${${PLATFORM}_ARCH})
 
 enable_language(C ASM)

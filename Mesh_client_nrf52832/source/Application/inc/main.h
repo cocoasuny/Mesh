@@ -1,10 +1,10 @@
 /**
   ****************************************************************************************
-  * @file    bsp.h
+  * @file    main.h
   * @author  Jason
   * @version V1.0.0
-  * @date    2017-7-10
-  * @brief   the header of bsp.c
+  * @date    2017-10-27
+  * @brief   the header file of main.c
   ****************************************************************************************
   * @attention
   *
@@ -12,29 +12,17 @@
   *
   ****************************************************************************************
   */
-
-
+  
+  
 /* Define to prevent recursive inclusion -------------------------------------*/
-#ifndef __BSP__
-#define __BSP__
-
-
-/* Includes ------------------------------------------------------------------*/
-#include "bsp_uart.h"
-#include "bsp_cli.h"
+#ifndef __MAIN__
+#define __MAIN__
 
 
 
-/* function declares */
-void bsp_init(void);
-void uart_init(void);
-
-
-
-#endif /* end of __BSP__ */
+#endif // __MAIN__
 
 
 /************************ (C) COPYRIGHT 2017 ShenZhen DBGJ Co., Ltd. *****END OF FILE****/
-
 
 
