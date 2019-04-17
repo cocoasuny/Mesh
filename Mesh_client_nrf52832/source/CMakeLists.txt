@@ -23,13 +23,8 @@ set(BLE_SOFTDEVICE_SUPPORT_INCLUDE_DIRS
     "${SDK_ROOT}/components/libraries/atomic"
     CACHE INTERNAL "")
 
-add_subdirectory("nRF5_SDK_for_mesh")
-add_subdirectory("MiddleWare")
 add_subdirectory("BSP")
+add_subdirectory("MiddleWare")
+add_subdirectory("nRF5_SDK_for_mesh")
 add_subdirectory("Application")
-
-
-
-
-
 

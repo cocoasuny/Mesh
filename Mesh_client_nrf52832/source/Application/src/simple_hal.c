@@ -44,7 +44,7 @@
 
 #include "nrf.h"
 #include "nrf_error.h"
-#include "platform.h"
+#include "boards.h"
 #include "nrf_delay.h"
 
 #include "nrf_mesh_defines.h"
@@ -166,11 +166,11 @@ void hal_led_blink_stop(void)
 
 void hal_leds_init(void)
 {
-//    for (uint32_t i = LED_START; i <= LED_STOP; ++i)
-//    {
-//        NRF_GPIO->PIN_CNF[i] = LED_PIN_CONFIG;
-//        NRF_GPIO->OUTSET = 1UL << i;
-//    }
+    for (uint32_t i = LED_START; i <= LED_STOP; ++i)
+    {
+        NRF_GPIO->PIN_CNF[i] = LED_PIN_CONFIG;
+        NRF_GPIO->OUTSET = 1UL << i;
+    }
 
     APP_ERROR_CHECK(app_timer_create(&m_blink_timer, APP_TIMER_MODE_REPEATED, led_timeout_handler));
 }

@@ -39,6 +39,7 @@
 #include <string.h>
 
 /* HAL */
+#include "boards.h"
 #include "simple_hal.h"
 #include "app_timer.h"
 
@@ -67,9 +68,6 @@
 #include "light_switch_example_common.h"
 #include "example_common.h"
 #include "ble_softdevice_support.h"
-#include "bsp_cli.h"
-#include "bsp.h"
-
 
 #define APP_STATE_OFF                (0)
 #define APP_STATE_ON                 (1)
@@ -97,10 +95,10 @@ const generic_onoff_client_callbacks_t client_cbs =
 
 static void device_identification_start_cb(uint8_t attention_duration_s)
 {
-//    hal_led_mask_set(LEDS_MASK, false);
-//    hal_led_blink_ms(BSP_LED_2_MASK  | BSP_LED_3_MASK, 
-//                     LED_BLINK_ATTENTION_INTERVAL_MS, 
-//                     LED_BLINK_ATTENTION_COUNT(attention_duration_s));
+    hal_led_mask_set(LEDS_MASK, false);
+    hal_led_blink_ms(BSP_LED_2_MASK  | BSP_LED_3_MASK, 
+                     LED_BLINK_ATTENTION_INTERVAL_MS, 
+                     LED_BLINK_ATTENTION_COUNT(attention_duration_s));
 }
 
 static void provisioning_aborted_cb(void)
@@ -123,9 +121,9 @@ static void provisioning_complete_cb(void)
     dsm_local_unicast_addresses_get(&node_address);
     __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Node Address: 0x%04x \n", node_address.address_start);
 
-//    hal_led_blink_stop();
-//    hal_led_mask_set(LEDS_MASK, LED_MASK_STATE_OFF);
-//    hal_led_blink_ms(LEDS_MASK, LED_BLINK_INTERVAL_MS, LED_BLINK_CNT_PROV);
+    hal_led_blink_stop();
+    hal_led_mask_set(LEDS_MASK, LED_MASK_STATE_OFF);
+    hal_led_blink_ms(LEDS_MASK, LED_BLINK_INTERVAL_MS, LED_BLINK_CNT_PROV);
 }
 
 /* This callback is called periodically if model is configured for periodic publishing */
@@ -149,7 +147,7 @@ static void app_gen_onoff_client_transaction_status_cb(access_model_handle_t mod
             break;
 
         case ACCESS_RELIABLE_TRANSFER_TIMEOUT:
-//            hal_led_blink_ms(LEDS_MASK, LED_BLINK_SHORT_INTERVAL_MS, LED_BLINK_CNT_NO_REPLY);
+            hal_led_blink_ms(LEDS_MASK, LED_BLINK_SHORT_INTERVAL_MS, LED_BLINK_CNT_NO_REPLY);
             __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Acknowledged transfer timeout.\n");
             break;
 
@@ -183,7 +181,7 @@ static void app_generic_onoff_client_status_cb(const generic_onoff_client_t * p_
 static void node_reset(void)
 {
     __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "----- Node reset  -----\n");
-//    hal_led_blink_ms(LEDS_MASK, LED_BLINK_INTERVAL_MS, LED_BLINK_CNT_RESET);
+    hal_led_blink_ms(LEDS_MASK, LED_BLINK_INTERVAL_MS, LED_BLINK_CNT_RESET);
     /* This function may return if there are ongoing flash operations. */
     mesh_stack_device_reset();
 }
@@ -235,7 +233,7 @@ static void button_event_handler(uint32_t button_number)
             /* In this examples, users will not be blocked if the model is busy */
             (void)access_model_reliable_cancel(m_clients[0].model_handle);
             status = generic_onoff_client_set(&m_clients[0], &set_params, &transition_params);
-//            hal_led_pin_set(BSP_LED_0, set_params.on_off);
+            hal_led_pin_set(BSP_LED_0, set_params.on_off);
             break;
 
         case 2:
@@ -243,7 +241,7 @@ static void button_event_handler(uint32_t button_number)
             /* Demonstrate un-acknowledged transaction, using 2nd client model instance */
             status = generic_onoff_client_set_unack(&m_clients[1], &set_params,
                                                     &transition_params, APP_UNACK_MSG_REPEAT_COUNT);
-//            hal_led_pin_set(BSP_LED_1, set_params.on_off);
+            hal_led_pin_set(BSP_LED_1, set_params.on_off);
             break;
     }
 
@@ -256,7 +254,7 @@ static void button_event_handler(uint32_t button_number)
         case NRF_ERROR_BUSY:
         case NRF_ERROR_INVALID_STATE:
             __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Client %u cannot send\n", button_number);
-//            hal_led_blink_ms(LEDS_MASK, LED_BLINK_SHORT_INTERVAL_MS, LED_BLINK_CNT_NO_REPLY);
+            hal_led_blink_ms(LEDS_MASK, LED_BLINK_SHORT_INTERVAL_MS, LED_BLINK_CNT_NO_REPLY);
             break;
 
         case NRF_ERROR_INVALID_PARAM:
@@ -320,7 +318,7 @@ static void mesh_init(void)
 static void initialize(void)
 {
     __LOG_INIT(LOG_SRC_APP | LOG_SRC_ACCESS | LOG_SRC_BEARER, LOG_LEVEL_INFO, LOG_CALLBACK_DEFAULT);
-    __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "----- BLE Mesh Light Switch Client Demo xxx -----\n");
+    __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "----- BLE Mesh Light Switch Client Demo -----\n");
 
     ERROR_CHECK(app_timer_init());
     hal_leds_init();
@@ -364,27 +362,17 @@ static void start(void)
 
     ERROR_CHECK(mesh_stack_start());
 
-//    hal_led_mask_set(LEDS_MASK, LED_MASK_STATE_OFF);
-//    hal_led_blink_ms(LEDS_MASK, LED_BLINK_INTERVAL_MS, LED_BLINK_CNT_START);
+    hal_led_mask_set(LEDS_MASK, LED_MASK_STATE_OFF);
+    hal_led_blink_ms(LEDS_MASK, LED_BLINK_INTERVAL_MS, LED_BLINK_CNT_START);
 }
 
 int main(void)
 {
     initialize();
     start();
-    //bsp_init();
-    
-    //char buf[100] = {0};
-    //sprintf(buf,"Hardfault PC:\r\n");
-    
-    //simple_uart_config();
-    //simple_uart_putstring((uint8_t *)buf);
-
-    //cli_process();
 
     for (;;)
     {
-        //cli_process();
         (void)sd_app_evt_wait();
     }
 }

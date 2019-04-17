@@ -39,6 +39,7 @@
 #include "app_error.h"
 #include "log.h"
 #include "mesh_app_utils.h"
+#include "boards.h"
 
 
 /* Copied from nrf_sdm.h (nRF5 SDK 14.2): */
@@ -63,8 +64,8 @@
 static inline void sleep_forever(void)
 {
     /* Turn on all LEDs on board */
-//    NRF_GPIO->DIRSET = LEDS_MASK;
-//    NRF_GPIO->OUTCLR = LEDS_MASK;
+    NRF_GPIO->DIRSET = LEDS_MASK;
+    NRF_GPIO->OUTCLR = LEDS_MASK;
 
     /*lint -save -e438 -e550 Unsused variable irqs_masked */
     uint32_t irqs_masked __attribute__((unused));

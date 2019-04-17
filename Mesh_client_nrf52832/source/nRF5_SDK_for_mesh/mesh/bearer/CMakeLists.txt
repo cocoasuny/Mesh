@@ -25,8 +25,7 @@ endif()
 
 set(MESH_BEARER_INCLUDE_DIRS
     "${CMAKE_CURRENT_SOURCE_DIR}/api"
-    "${CMAKE_CURRENT_SOURCE_DIR}/include" 
-    CACHE INTERNAL "")
+    "${CMAKE_CURRENT_SOURCE_DIR}/include" CACHE INTERNAL "")
 
 set(lint_include_dirs
     ${MESH_BEARER_INCLUDE_DIRS}

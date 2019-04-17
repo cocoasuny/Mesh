@@ -39,11 +39,6 @@
 #define NRF_MESH_CONFIG_APP_H__
 
 #include "light_switch_example_common.h"
-#include "bsp_cli.h"
-
-
-#define LOG_CALLBACK_DEFAULT        log_callback_cli
-#define NRF_MESH_LOG_ENABLE         (1)     
 
 /**
  * @defgroup NRF_MESH_CONFIG_APP nRF Mesh app config

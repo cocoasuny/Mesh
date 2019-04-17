@@ -13,15 +13,8 @@
   ****************************************************************************************
   */
 
-
-/* Define to prevent recursive inclusion -------------------------------------*/
-#ifndef __BSP__
-#define __BSP__
-
-
 /* Includes ------------------------------------------------------------------*/
 #include "bsp_uart.h"
-#include "bsp_cli.h"
 
 
 
@@ -30,8 +23,6 @@ void bsp_init(void);
 void uart_init(void);
 
 
-
-#endif /* end of __BSP__ */
 
 
 /************************ (C) COPYRIGHT 2017 ShenZhen DBGJ Co., Ltd. *****END OF FILE****/

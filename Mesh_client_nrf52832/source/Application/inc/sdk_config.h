@@ -4215,11 +4215,11 @@
 // <e> NRFX_UART_ENABLED - nrfx_uart - UART peripheral driver
 //==========================================================
 #ifndef NRFX_UART_ENABLED
-#define NRFX_UART_ENABLED 1
+#define NRFX_UART_ENABLED 0
 #endif
 // <o> NRFX_UART0_ENABLED - Enable UART0 instance 
 #ifndef NRFX_UART0_ENABLED
-#define NRFX_UART0_ENABLED 1
+#define NRFX_UART0_ENABLED 0
 #endif
 
 // <o> NRFX_UART_DEFAULT_CONFIG_HWFC  - Hardware Flow Control
@@ -5559,7 +5559,7 @@
 // <e> UART_ENABLED - nrf_drv_uart - UART/UARTE peripheral driver - legacy layer
 //==========================================================
 #ifndef UART_ENABLED
-#define UART_ENABLED 1
+#define UART_ENABLED 0
 #endif
 // <o> UART_DEFAULT_CONFIG_HWFC  - Hardware Flow Control
 
@@ -5636,7 +5636,7 @@
 // <e> UART0_ENABLED - Enable UART0 instance
 //==========================================================
 #ifndef UART0_ENABLED
-#define UART0_ENABLED 1
+#define UART0_ENABLED 0
 #endif
 // <q> UART0_CONFIG_USE_EASY_DMA  - Default setting for using EasyDMA
  
@@ -7148,14 +7148,9 @@
 //==========================================================
 // <q> NRF_CLI_ENABLED  - Enable/disable the CLI module.
 
-#ifndef NRF_CLI_UART_ENABLED
-#define NRF_CLI_UART_ENABLED 1
-#endif
-
-
 
 #ifndef NRF_CLI_ENABLED
-#define NRF_CLI_ENABLED 1
+#define NRF_CLI_ENABLED 0
 #endif
 
 // <o> NRF_CLI_ARGC_MAX - Maximum number of parameters passed to the command handler.
@@ -7229,7 +7224,7 @@
 
 
 #ifndef NRF_CLI_STATISTICS_ENABLED
-#define NRF_CLI_STATISTICS_ENABLED 0
+#define NRF_CLI_STATISTICS_ENABLED 1
 #endif
 
 // <q> NRF_CLI_LOG_BACKEND  - Enable logger backend interface.

@@ -42,6 +42,7 @@
 #ifdef CONFIG_APP_IN_CORE
 #include "nrf_mesh_config_app.h"
 #endif
+
 /**
  * @defgroup NRF_MESH_CONFIG_CORE Compile time configuration
  * Configuration of the compilation of the core mesh modules.
