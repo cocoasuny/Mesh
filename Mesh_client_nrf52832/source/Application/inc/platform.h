@@ -18,12 +18,10 @@
 #ifndef __PLATFORM__
 #define __PLATFORM__
 
-
-#include "bsp_cli.h"
-
+#include "common.h"
 
 /* debug switch define */
-#define LOG_CALLBACK_DEFAULT log_callback_cli
+//define LOG_CALLBACK_DEFAULT log_callback_cli
 
 /* gpio define for uart */
 #define RX_PIN_NUMBER               23

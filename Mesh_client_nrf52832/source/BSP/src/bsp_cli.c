@@ -17,6 +17,8 @@
 #include "bsp_cli.h"
 #include "nrf_cli_uart.h"
 #include "sdk_config.h"
+#include "common.h"
+
 
 #if NRF_MODULE_ENABLED(NRF_CLI)     //if cli module enabled in sdk_config.h
 

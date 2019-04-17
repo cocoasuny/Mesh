@@ -33,16 +33,19 @@ if (BUILD_BOOTLOADER)
         "${CMAKE_CURRENT_SOURCE_DIR}/src/rand.c"
         "${CMAKE_CURRENT_SOURCE_DIR}/src/transport.c"
         "${CMAKE_CURRENT_SOURCE_DIR}/src/uECC.c"
-        "${SDK_ROOT}/components/libraries/sha256/sha256.c" CACHE INTERNAL "")
+        "${SDK_ROOT}/components/libraries/sha256/sha256.c" 
+        CACHE INTERNAL "")
 
     set(BOOTLOADER_SERIAL_SOURCE_FILES
         "${CMAKE_CURRENT_SOURCE_DIR}/src/serial_handler_uart.c"
-        "${CMAKE_CURRENT_SOURCE_DIR}/src/mesh_aci.c" CACHE INTERNAL "")
+        "${CMAKE_CURRENT_SOURCE_DIR}/src/mesh_aci.c" 
+        CACHE INTERNAL "")
 
     set(BOOTLOADER_INCLUDE_DIRS
         "${CMAKE_CURRENT_SOURCE_DIR}/include"
         ${${nRF5_SDK_VERSION}_INCLUDE_DIRS}
-        "${SDK_ROOT}/components/libraries/sha256" CACHE INTERNAL "")
+        "${SDK_ROOT}/components/libraries/sha256" 
+        CACHE INTERNAL "")
 
     set(BOOTLOADER_DEFINES
         -DNORDIC_SDK_VERSION=15

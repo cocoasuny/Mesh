@@ -43,7 +43,6 @@
 #include "app_error.h"
 #include "bsp.h"
 #include "log.h"
-#include "bsp_cli.h"
 //#include "Global_Typedef.h"
 #include "main.h"
 

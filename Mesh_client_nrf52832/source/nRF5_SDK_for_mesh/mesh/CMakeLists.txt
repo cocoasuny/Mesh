@@ -19,5 +19,5 @@ else ()
         ${PROV_INCLUDE_DIRS}
         ${MESH_BEARER_INCLUDE_DIRS}
         ${MESH_GATT_INCLUDE_DIRS}
-        PARENT_SCOPE)
+        CACHE INTERNAL "")
 endif (BUILD_HOST)

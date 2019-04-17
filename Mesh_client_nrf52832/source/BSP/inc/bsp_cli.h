@@ -19,7 +19,6 @@
 
 
 /* Includes ------------------------------------------------------------------*/
-#include "common.h"
 #include "nrf_cli.h"
 #include "nrf_cli_uart.h"
 

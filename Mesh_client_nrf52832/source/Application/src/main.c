@@ -320,7 +320,7 @@ static void mesh_init(void)
 static void initialize(void)
 {
     __LOG_INIT(LOG_SRC_APP | LOG_SRC_ACCESS | LOG_SRC_BEARER, LOG_LEVEL_INFO, LOG_CALLBACK_DEFAULT);
-    __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "----- BLE Mesh Light Switch Client Demo -----\n");
+    __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "----- BLE Mesh Light Switch Client Demo xxx -----\n");
 
     ERROR_CHECK(app_timer_init());
     hal_leds_init();
@@ -372,10 +372,19 @@ int main(void)
 {
     initialize();
     start();
-    bsp_init();
+    //bsp_init();
+    
+    //char buf[100] = {0};
+    //sprintf(buf,"Hardfault PC:\r\n");
+    
+    //simple_uart_config();
+    //simple_uart_putstring((uint8_t *)buf);
+
+    //cli_process();
 
     for (;;)
     {
+        //cli_process();
         (void)sd_app_evt_wait();
     }
 }
