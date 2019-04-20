@@ -5,11 +5,13 @@ set(ACCESS_SOURCE_FILES
     "${CMAKE_CURRENT_SOURCE_DIR}/src/access.c"
     "${CMAKE_CURRENT_SOURCE_DIR}/src/access_reliable.c"
     "${CMAKE_CURRENT_SOURCE_DIR}/src/access_loopback.c"
-    "${CMAKE_CURRENT_SOURCE_DIR}/src/device_state_manager.c" CACHE INTERNAL "")
+    "${CMAKE_CURRENT_SOURCE_DIR}/src/device_state_manager.c" 
+    CACHE INTERNAL "")
 
 set(ACCESS_INCLUDE_DIRS
     "${CMAKE_CURRENT_SOURCE_DIR}/api"
-    "${CMAKE_CURRENT_SOURCE_DIR}/include" CACHE INTERNAL "")
+    "${CMAKE_CURRENT_SOURCE_DIR}/include" 
+    CACHE INTERNAL "")
 
 set(lint_include_dirs
     ${ACCESS_INCLUDE_DIRS}

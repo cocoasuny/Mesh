@@ -103,7 +103,7 @@ static void device_identification_start_cb(uint8_t attention_duration_s)
 
 static void provisioning_aborted_cb(void)
 {
-    hal_led_blink_stop();
+    //hal_led_blink_stop();
 }
 
 static void provisioning_complete_cb(void)
@@ -121,7 +121,7 @@ static void provisioning_complete_cb(void)
     dsm_local_unicast_addresses_get(&node_address);
     __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Node Address: 0x%04x \n", node_address.address_start);
 
-    hal_led_blink_stop();
+    //hal_led_blink_stop();
     //hal_led_mask_set(LEDS_MASK, LED_MASK_STATE_OFF);
     //hal_led_blink_ms(LEDS_MASK, LED_BLINK_INTERVAL_MS, LED_BLINK_CNT_PROV);
 }
