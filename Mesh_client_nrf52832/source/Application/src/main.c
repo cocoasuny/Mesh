@@ -67,6 +67,9 @@
 #include "light_switch_example_common.h"
 #include "example_common.h"
 #include "ble_softdevice_support.h"
+#include "bsp_cli.h"
+#include "bsp.h"
+
 
 #define APP_STATE_OFF                (0)
 #define APP_STATE_ON                 (1)
@@ -370,9 +373,19 @@ int main(void)
 {
     initialize();
     start();
+    bsp_init();
+    
+    char buf[100] = {0};
+    sprintf(buf,"Hardfault PC OK:\r\n");
+    
+    simple_uart_config();
+    simple_uart_putstring((uint8_t *)buf);
+
+    //cli_process();
 
     for (;;)
     {
+        //cli_process();
         (void)sd_app_evt_wait();
     }
 }

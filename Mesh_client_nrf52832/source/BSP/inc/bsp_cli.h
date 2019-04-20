@@ -13,8 +13,12 @@
   ****************************************************************************************
   */
 
+/* Define to prevent recursive inclusion -------------------------------------*/
+#ifndef __BSP_CLI__
+#define __BSP_CLI__
+
+
 /* Includes ------------------------------------------------------------------*/
-#include "common.h"
 #include "nrf_cli.h"
 #include "nrf_cli_uart.h"
 
@@ -23,11 +27,12 @@
 ret_code_t cli_init(void);
 ret_code_t cli_start(void);
 void cli_process(void);
-void log_callback_cli(uint32_t dbg_level, const char * p_filename, uint16_t line,
-    uint32_t timestamp, const char * format, va_list arguments);
+void log_callback_cli(uint32_t dbg_level, const char * p_filename, uint16_t line,uint32_t timestamp, const char * format, va_list arguments);
 
 
 
+
+#endif /* end of __BSP_CLI__ */
 
 
 /************************ (C) COPYRIGHT 2017 ShenZhen DBGJ Co., Ltd. *****END OF FILE****/

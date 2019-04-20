@@ -16,6 +16,9 @@
 /* Includes ------------------------------------------------------------------*/
 #include "bsp_cli.h"
 #include "nrf_cli_uart.h"
+#include "sdk_config.h"
+#include "common.h"
+
 
 #if NRF_MODULE_ENABLED(NRF_CLI)     //if cli module enabled in sdk_config.h
 
@@ -107,8 +110,7 @@ void cli_process(void)
   * @param  None
   * @retval None
   */
-void log_callback_cli(uint32_t dbg_level, const char * p_filename, uint16_t line,
-    uint32_t timestamp, const char * format, va_list arguments)
+void log_callback_cli(uint32_t dbg_level, const char * p_filename, uint16_t line,uint32_t timestamp, const char * format, va_list arguments)
 {
     char buf[100] = {0};
     
@@ -188,7 +190,7 @@ static void cmd_led_ctl_param(nrf_cli_t const * p_cli, size_t argc, char **argv)
 //    {
 //        nrf_cli_fprintf(p_cli, NRF_CLI_NORMAL, "argv[%d] = %s\r\n", i, argv[i]);
 //    }
-    uint8_t ledNum = 0;
+    /*uint8_t ledNum = 0;
     bool    ledStatus = OFF;
     
     ledNum = atoi(argv[1]);  //convernt to led number
@@ -218,6 +220,7 @@ static void cmd_led_ctl_param(nrf_cli_t const * p_cli, size_t argc, char **argv)
     {
         nrf_cli_fprintf(p_cli, NRF_CLI_NORMAL,"cmd parameter number err\r\n");
     }
+    */
     
 }
 
