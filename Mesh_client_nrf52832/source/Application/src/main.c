@@ -372,20 +372,12 @@ static void start(void)
 int main(void)
 {
     initialize();
-    start();
     bsp_init();
-    
-    char buf[100] = {0};
-    sprintf(buf,"Hardfault PC OK:\r\n");
-    
-    simple_uart_config();
-    simple_uart_putstring((uint8_t *)buf);
-
-    //cli_process();
+    start();
 
     for (;;)
     {
-        //cli_process();
+        cli_process();
         (void)sd_app_evt_wait();
     }
 }
