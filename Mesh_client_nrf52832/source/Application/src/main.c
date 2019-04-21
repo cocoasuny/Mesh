@@ -371,8 +371,8 @@ static void start(void)
 
 int main(void)
 {
-    initialize();
     bsp_init();
+    initialize();
     start();
 
     for (;;)
