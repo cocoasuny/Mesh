@@ -61,6 +61,9 @@
 #include "log.h"
 #include "rtt_input.h"
 
+/* FreeRTOS */
+#include "FreeRTOS.h"
+
 /* Example specific includes */
 #include "app_config.h"
 #include "nrf_mesh_config_examples.h"
@@ -69,6 +72,7 @@
 #include "ble_softdevice_support.h"
 #include "bsp_cli.h"
 #include "bsp.h"
+#include "app_freertos.h"
 
 
 #define APP_STATE_OFF                (0)
@@ -374,10 +378,23 @@ int main(void)
     bsp_init();
     initialize();
     start();
+    __LOG_INIT(LOG_SRC_APP | LOG_SRC_ACCESS | LOG_SRC_BEARER, LOG_LEVEL_INFO, LOG_CALLBACK_DEFAULT);
+    __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "----- BLE Mesh Light Switch Client Demo -----\n");
 
-    for (;;)
+    /* task creat */
+    main_task_start();
+    
+    // Start FreeRTOS scheduler.
+    vTaskStartScheduler();
+
+    while (true)
+    {
+        APP_ERROR_HANDLER(NRF_ERROR_FORBIDDEN);
+    }
+
+    /*for (;;)
     {
         cli_process();
         (void)sd_app_evt_wait();
-    }
+    }*/
 }

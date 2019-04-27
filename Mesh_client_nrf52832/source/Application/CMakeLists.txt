@@ -3,6 +3,7 @@ set(target "light_switch_client_${PLATFORM}_${SOFTDEVICE}")
 #source file defines
 set(SRC_LISTS 
 	"${CMAKE_CURRENT_SOURCE_DIR}/src/main.c"
+	"${CMAKE_SOURCE_DIR}/source/Application/src/app_freertos.c"
     "${CMAKE_SOURCE_DIR}/source/nRF5_SDK_for_mesh/mesh/stack/src/mesh_stack.c"
     "${CMAKE_SOURCE_DIR}/source/Application/src/mesh_provisionee.c"
     "${MBTLE_SOURCE_DIR}/source/Application/src/rtt_input.c"
