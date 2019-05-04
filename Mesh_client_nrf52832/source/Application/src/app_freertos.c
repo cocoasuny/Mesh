@@ -23,6 +23,8 @@
 /* private variables define */
 static TaskHandle_t 				m_logger_thread;					  	/**< Definition of Logger thread. */
 static TaskHandle_t 				m_creat_task_thread;					/**< Definition of creat task thread. */
+static TaskHandle_t                 m_measurement_thread;                   /**< Definition of measurement thread. */
+
 
 /* private function declare*/
 static void logger_thread(void * arg);
@@ -41,15 +43,29 @@ static void creat_task_thread(void * arg);
 static void logger_thread(void * arg)
 {   
     UNUSED_PARAMETER(arg);
-    
-    __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "----- FreeRTOS Running -----\n");
-	
+    	
     while(1)
     {
 		cli_process();
-		vTaskDelay(100);
+		vTaskDelay(50);
     }
 }
+
+/**
+  * @brief  measurement_thread
+  * @note   测量任务
+  * @param  pvParameters
+  * @retval None    
+  */
+void measurement_thread(void *pvParameters)
+{
+    while(1)
+    {
+		//__LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "----- BLE Mesh Light Switch Client Demo -----\n");
+		vTaskDelay(500);
+    }
+}
+
 
 /**@brief Thread for handling the creat tasks and bsp initalize.
  *
@@ -83,7 +99,15 @@ static void creat_task_thread(void * arg)
   */
 static void app_task_creat(void)
 {
-    
+    /* creat a thread for measurement */
+	if(
+		pdPASS != xTaskCreate(measurement_thread,"meat",MEASUREMENT_STACK,NULL,
+							  	MEASUREMENT_PRIORITY,&m_measurement_thread)
+	)
+	{
+        __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "----- Err mea -----\n");
+		//APP_ERROR_HANDLER(NRF_ERROR_NO_MEM);
+	} 
 
 }
 /**
