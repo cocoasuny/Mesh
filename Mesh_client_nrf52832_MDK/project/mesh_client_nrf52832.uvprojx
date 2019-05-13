@@ -385,6 +385,11 @@
               <FilePath>..\source\Application\src\main.c</FilePath>
             </File>
             <File>
+              <FileName>app_freertos.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\source\Application\src\app_freertos.c</FilePath>
+            </File>
+            <File>
               <FileName>cli_cmd.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\source\Application\src\cli_cmd.c</FilePath>
@@ -413,11 +418,6 @@
               <FileName>bsp.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\source\BSP\src\bsp.c</FilePath>
-            </File>
-            <File>
-              <FileName>bsp_btn_ble.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\source\BSP\src\bsp_btn_ble.c</FilePath>
             </File>
           </Files>
         </Group>
