@@ -543,7 +543,7 @@
  
 
 #ifndef NRF_MPU_CLI_CMDS
-#define NRF_MPU_CLI_CMDS 0
+#define NRF_MPU_CLI_CMDS 1
 #endif
 
 // </e>
@@ -2397,7 +2397,7 @@
 // <e> NRFX_POWER_ENABLED - nrfx_power - POWER peripheral driver
 //==========================================================
 #ifndef NRFX_POWER_ENABLED
-#define NRFX_POWER_ENABLED 0
+#define NRFX_POWER_ENABLED 1
 #endif
 // <o> NRFX_POWER_CONFIG_IRQ_PRIORITY  - Interrupt priority
  
@@ -4612,7 +4612,7 @@
 // <e> POWER_ENABLED - nrf_drv_power - POWER peripheral driver - legacy layer
 //==========================================================
 #ifndef POWER_ENABLED
-#define POWER_ENABLED 0
+#define POWER_ENABLED 1
 #endif
 // <o> POWER_CONFIG_IRQ_PRIORITY  - Interrupt priority
  
@@ -6903,6 +6903,15 @@
 
 // </e>
 
+// <q> NRF_CLI_UART_ENABLED  - nrf_cli_uart - UART command line interface transport
+ 
+
+#ifndef NRF_CLI_UART_ENABLED
+#define NRF_CLI_UART_ENABLED 1
+#endif
+
+// </e>
+
 // </e>
 
 // <q> NRF_FPRINTF_ENABLED  - nrf_fprintf - fprintf function.
@@ -7093,13 +7102,13 @@
 // <e> NRF_QUEUE_ENABLED - nrf_queue - Queue module
 //==========================================================
 #ifndef NRF_QUEUE_ENABLED
-#define NRF_QUEUE_ENABLED 0
+#define NRF_QUEUE_ENABLED 1
 #endif
 // <q> NRF_QUEUE_CLI_CMDS  - Enable CLI commands specific to the module
  
 
 #ifndef NRF_QUEUE_CLI_CMDS
-#define NRF_QUEUE_CLI_CMDS 0
+#define NRF_QUEUE_CLI_CMDS 1
 #endif
 
 // </e>
@@ -7240,7 +7249,7 @@
  
 
 #ifndef NRF_CLI_ENABLED
-#define NRF_CLI_ENABLED 0
+#define NRF_CLI_ENABLED 1
 #endif
 
 // <o> NRF_CLI_ARGC_MAX - Maximum number of parameters passed to the command handler. 
@@ -7271,14 +7280,14 @@
  
 
 #ifndef NRF_CLI_WILDCARD_ENABLED
-#define NRF_CLI_WILDCARD_ENABLED 0
+#define NRF_CLI_WILDCARD_ENABLED 1
 #endif
 
 // <q> NRF_CLI_METAKEYS_ENABLED  - Enable additional control keys for CLI commands like ctrl+a, ctrl+e, ctrl+w, ctrl+u
  
 
 #ifndef NRF_CLI_METAKEYS_ENABLED
-#define NRF_CLI_METAKEYS_ENABLED 0
+#define NRF_CLI_METAKEYS_ENABLED 1
 #endif
 
 // <o> NRF_CLI_PRINTF_BUFF_SIZE - Maximum print buffer size. 
@@ -7340,6 +7349,79 @@
 // <h> nRF_Log 
 
 //==========================================================
+// <e> NRF_LOG_BACKEND_FLASH_ENABLED - nrf_log_backend_flash - Log flash backend
+//==========================================================
+#ifndef NRF_LOG_BACKEND_FLASH_ENABLED
+#define NRF_LOG_BACKEND_FLASH_ENABLED 1
+#endif
+// <q> NRF_LOG_BACKEND_FLASH_CLI_CMDS  - Enable CLI commands for this module.
+ 
+
+#ifndef NRF_LOG_BACKEND_FLASH_CLI_CMDS
+#define NRF_LOG_BACKEND_FLASH_CLI_CMDS 1
+#endif
+
+// <e> NRF_LOG_BACKEND_FLASHLOG_ENABLED - Enable flashlog backend.
+//==========================================================
+#ifndef NRF_LOG_BACKEND_FLASHLOG_ENABLED
+#define NRF_LOG_BACKEND_FLASHLOG_ENABLED 1
+#endif
+// <o> NRF_LOG_BACKEND_FLASHLOG_QUEUE_SIZE - Logger messages queue size. 
+// <i> Queue holds log messages pending to be written to flash.
+// <i> Note that the queue holds logger messages and thus the queue size determines
+// <i> increasing the pool of logger messages (see log message pool configuration).
+
+#ifndef NRF_LOG_BACKEND_FLASHLOG_QUEUE_SIZE
+#define NRF_LOG_BACKEND_FLASHLOG_QUEUE_SIZE 8
+#endif
+
+// </e>
+
+// <e> NRF_LOG_BACKEND_CRASHLOG_ENABLED - Enable crashlog backend.
+//==========================================================
+#ifndef NRF_LOG_BACKEND_CRASHLOG_ENABLED
+#define NRF_LOG_BACKEND_CRASHLOG_ENABLED 1
+#endif
+// <o> NRF_LOG_BACKEND_CRASHLOG_FIFO_SIZE - Number of log messages held to be flushed in panic. 
+// <i> Crashlog FIFO always keeps a defined number of the most
+// <i> recent logs (severity level is set on runtime).
+// <i> Note that the FIFO holds logger messages and thus the FIFO size determines
+// <i> increasing the pool of logger messages (see log message pool configuration).
+
+#ifndef NRF_LOG_BACKEND_CRASHLOG_FIFO_SIZE
+#define NRF_LOG_BACKEND_CRASHLOG_FIFO_SIZE 8
+#endif
+
+// </e>
+
+// <o> NRF_LOG_BACKEND_FLASH_SER_BUFFER_SIZE - Size of the buffer used for serialize log message. 
+// <i> Message is trimmed if it is longer. It may happen in case of 
+// <i> hexdump message. Buffer size must be multiple of 4.
+
+#ifndef NRF_LOG_BACKEND_FLASH_SER_BUFFER_SIZE
+#define NRF_LOG_BACKEND_FLASH_SER_BUFFER_SIZE 64
+#endif
+
+// <h> Flash log location - Configuration of flash area used for storing the logs.
+
+//==========================================================
+// <o> NRF_LOG_BACKEND_FLASH_START_PAGE - Starting page.  
+// <i> If 0, then pages directly after the application are used.
+
+#ifndef NRF_LOG_BACKEND_FLASH_START_PAGE
+#define NRF_LOG_BACKEND_FLASH_START_PAGE 0
+#endif
+
+// <o> NRF_LOG_BACKEND_PAGES - Number of pages. 
+#ifndef NRF_LOG_BACKEND_PAGES
+#define NRF_LOG_BACKEND_PAGES 1
+#endif
+
+// </h> 
+//==========================================================
+
+// </e>
+
 // <e> NRF_LOG_BACKEND_RTT_ENABLED - nrf_log_backend_rtt - Log RTT backend
 //==========================================================
 #ifndef NRF_LOG_BACKEND_RTT_ENABLED
@@ -7443,7 +7525,7 @@
 // <i> RAM memory usage.
 
 #ifndef NRF_LOG_MSGPOOL_ELEMENT_COUNT
-#define NRF_LOG_MSGPOOL_ELEMENT_COUNT 8
+#define NRF_LOG_MSGPOOL_ELEMENT_COUNT 16
 #endif
 
 // </h> 
@@ -7481,7 +7563,7 @@
  
 
 #ifndef NRF_LOG_CLI_CMDS
-#define NRF_LOG_CLI_CMDS 0
+#define NRF_LOG_CLI_CMDS 1
 #endif
 
 // <o> NRF_LOG_DEFAULT_LEVEL  - Default Severity level
@@ -7509,7 +7591,7 @@
  
 
 #ifndef NRF_LOG_FILTERS_ENABLED
-#define NRF_LOG_FILTERS_ENABLED 0
+#define NRF_LOG_FILTERS_ENABLED 1
 #endif
 
 // <o> NRF_LOG_STR_PUSH_BUFFER_SIZE  - Size of the buffer dedicated for strings stored using @ref NRF_LOG_PUSH.
@@ -7600,7 +7682,7 @@
 // <i> Function for getting the timestamp is provided by the user
 //==========================================================
 #ifndef NRF_LOG_USES_TIMESTAMP
-#define NRF_LOG_USES_TIMESTAMP 0
+#define NRF_LOG_USES_TIMESTAMP 1
 #endif
 // <o> NRF_LOG_TIMESTAMP_DEFAULT_FREQUENCY - Default frequency of the timestamp (in Hz) or 0 to use app_timer frequency. 
 #ifndef NRF_LOG_TIMESTAMP_DEFAULT_FREQUENCY
@@ -9922,7 +10004,7 @@
 // <e> NRF_SDH_LOG_ENABLED - Enable logging in SoftDevice handler module.
 //==========================================================
 #ifndef NRF_SDH_LOG_ENABLED
-#define NRF_SDH_LOG_ENABLED 1
+#define NRF_SDH_LOG_ENABLED 0
 #endif
 // <o> NRF_SDH_LOG_LEVEL  - Default Severity level
  
@@ -9973,7 +10055,7 @@
 // <e> NRF_SDH_SOC_LOG_ENABLED - Enable logging in SoftDevice handler (SoC) module.
 //==========================================================
 #ifndef NRF_SDH_SOC_LOG_ENABLED
-#define NRF_SDH_SOC_LOG_ENABLED 1
+#define NRF_SDH_SOC_LOG_ENABLED 0
 #endif
 // <o> NRF_SDH_SOC_LOG_LEVEL  - Default Severity level
  

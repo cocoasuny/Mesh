@@ -83,7 +83,7 @@
 #include "nrf_log.h"
 #include "nrf_log_ctrl.h"
 #include "nrf_log_default_backends.h"
-
+#include "cli_cmd.h"
 
 #define DEVICE_NAME                         "Nordic_HRM"                            /**< Name of device. Will be included in the advertising data. */
 #define MANUFACTURER_NAME                   "NordicSemiconductor"                   /**< Manufacturer. Will be passed to Device Information Service. */
@@ -895,12 +895,16 @@ static void advertising_start(void * p_erase_bonds)
 static void logger_thread(void * arg)
 {
     UNUSED_PARAMETER(arg);
+	cli_init();
+	cli_start();
 
     while (1)
     {
-        NRF_LOG_FLUSH();
+        //NRF_LOG_FLUSH();
+		cli_process();
+		vTaskDelay(50);
 
-        vTaskSuspend(NULL); // Suspend myself
+        //vTaskSuspend(NULL); // Suspend myself
     }
 }
 #endif //NRF_LOG_ENABLED
@@ -929,10 +933,7 @@ static void clock_init(void)
  */
 int main(void)
 {
-    bool erase_bonds;
-
     // Initialize modules.
-    log_init();
     clock_init();
 
     // Do not start any interrupt that uses system functions before system initialisation.
@@ -946,29 +947,6 @@ int main(void)
     }
 #endif
 
-    // Activate deep sleep mode.
-    SCB->SCR |= SCB_SCR_SLEEPDEEP_Msk;
-
-    // Configure and initialize the BLE stack.
-    ble_stack_init();
-
-    // Initialize modules.
-    timers_init();
-    buttons_leds_init(&erase_bonds);
-    gap_params_init();
-    gatt_init();
-    advertising_init();
-    services_init();
-    sensor_simulator_init();
-    conn_params_init();
-    peer_manager_init();
-    application_timers_start();
-
-    // Create a FreeRTOS task for the BLE stack.
-    // The task will run advertising_start() before entering its loop.
-    nrf_sdh_freertos_init(advertising_start, &erase_bonds);
-
-    NRF_LOG_INFO("HRS FreeRTOS example started.");
     // Start FreeRTOS scheduler.
     vTaskStartScheduler();
 

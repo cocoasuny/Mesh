@@ -335,7 +335,7 @@
               <MiscControls>--reduce_paths</MiscControls>
               <Define>BOARD_PCA10040 CONFIG_GPIO_AS_PINRESET FLOAT_ABI_HARD FREERTOS NRF52 NRF52832_XXAA NRF52_PAN_74 NRF_SD_BLE_API_VERSION=6 S132 SOFTDEVICE_PRESENT __HEAP_SIZE=1024 __STACK_SIZE=2048</Define>
               <Undefine></Undefine>
-              <IncludePath>..\source\Application\inc;..\source\BSP\inc;..\source\Middllewares\fprintf;..\source\Middllewares\freertos\config;..\source\Middllewares\freertos\source\include;..\source\Middllewares\freertos\portable;..\source\Middllewares\freertos\portable\ARM\nrf52;..\source\Middllewares\freertos\portable\CMSIS\nrf52;..\source\nRF_BLE_Services\inc;..\source\nRF5_SDK_15.2.0_9412b96\modules\nrfx;..\source\nRF5_SDK_15.2.0_9412b96\modules\nrfx\hal;..\source\nRF5_SDK_15.2.0_9412b96\modules\nrfx\drivers\include;..\source\nRF5_SDK_15.2.0_9412b96\components\libraries\util;..\source\nRF5_SDK_15.2.0_9412b96\components\softdevice\s132\headers;..\source\nRF5_SDK_15.2.0_9412b96\components\ble\ble_advertising;..\source\nRF5_SDK_15.2.0_9412b96\components\ble\common;..\source\nRF5_SDK_15.2.0_9412b96\components\ble\nrf_ble_qwr;..\source\nRF5_SDK_15.2.0_9412b96\components\ble\nrf_ble_gatt;..\source\nRF5_SDK_15.2.0_9412b96\components\ble\peer_manager;..\source\nRF5_SDK_15.2.0_9412b96\components\libraries\timer;..\source\nRF5_SDK_15.2.0_9412b96\components\libraries\atomic;..\source\nRF5_SDK_15.2.0_9412b96\components\libraries\atomic_flags;..\source\nRF5_SDK_15.2.0_9412b96\components\libraries\log;..\source\nRF5_SDK_15.2.0_9412b96\components\libraries\log\src;..\source\nRF5_SDK_15.2.0_9412b96\components\libraries\mutex;..\source\nRF5_SDK_15.2.0_9412b96\components\libraries\fds;..\source\nRF5_SDK_15.2.0_9412b96\integration\nrfx;..\source\nRF5_SDK_15.2.0_9412b96\integration\nrfx\legacy;..\source\nRF5_SDK_15.2.0_9412b96\components\boards;..\source\nRF5_SDK_15.2.0_9412b96\components\libraries\experimental_section_vars;..\source\nRF5_SDK_15.2.0_9412b96\components\softdevice\common;..\source\nRF5_SDK_15.2.0_9412b96\components\libraries\strerror;..\source\nRF5_SDK_15.2.0_9412b96\components\libraries\button;..\source\nRF5_SDK_15.2.0_9412b96\components\libraries\bsp;..\source\nRF5_SDK_15.2.0_9412b96\components\libraries\sensorsim;..\source\nRF5_SDK_15.2.0_9412b96\components\libraries\memobj;..\source\nRF5_SDK_15.2.0_9412b96\components\libraries\balloc;..\source\nRF5_SDK_15.2.0_9412b96\components\libraries\atomic_fifo;..\source\nRF5_SDK_15.2.0_9412b96\components\libraries\ringbuf;..\source\nRF5_SDK_15.2.0_9412b96\components\libraries\fstorage</IncludePath>
+              <IncludePath>..\source\Application\inc;..\source\BSP\inc;..\source\Middllewares\fprintf;..\source\Middllewares\freertos\config;..\source\Middllewares\freertos\source\include;..\source\Middllewares\freertos\portable;..\source\Middllewares\freertos\portable\ARM\nrf52;..\source\Middllewares\freertos\portable\CMSIS\nrf52;..\source\nRF_BLE_Services\inc;..\source\nRF5_SDK_15.2.0_9412b96\modules\nrfx;..\source\nRF5_SDK_15.2.0_9412b96\modules\nrfx\hal;..\source\nRF5_SDK_15.2.0_9412b96\modules\nrfx\drivers\include;..\source\nRF5_SDK_15.2.0_9412b96\components\libraries\util;..\source\nRF5_SDK_15.2.0_9412b96\components\softdevice\s132\headers;..\source\nRF5_SDK_15.2.0_9412b96\components\ble\ble_advertising;..\source\nRF5_SDK_15.2.0_9412b96\components\ble\common;..\source\nRF5_SDK_15.2.0_9412b96\components\ble\nrf_ble_qwr;..\source\nRF5_SDK_15.2.0_9412b96\components\ble\nrf_ble_gatt;..\source\nRF5_SDK_15.2.0_9412b96\components\ble\peer_manager;..\source\nRF5_SDK_15.2.0_9412b96\components\libraries\timer;..\source\nRF5_SDK_15.2.0_9412b96\components\libraries\atomic;..\source\nRF5_SDK_15.2.0_9412b96\components\libraries\atomic_flags;..\source\nRF5_SDK_15.2.0_9412b96\components\libraries\log;..\source\nRF5_SDK_15.2.0_9412b96\components\libraries\log\src;..\source\nRF5_SDK_15.2.0_9412b96\components\libraries\mutex;..\source\nRF5_SDK_15.2.0_9412b96\components\libraries\fds;..\source\nRF5_SDK_15.2.0_9412b96\integration\nrfx;..\source\nRF5_SDK_15.2.0_9412b96\integration\nrfx\legacy;..\source\nRF5_SDK_15.2.0_9412b96\components\boards;..\source\nRF5_SDK_15.2.0_9412b96\components\libraries\experimental_section_vars;..\source\nRF5_SDK_15.2.0_9412b96\components\softdevice\common;..\source\nRF5_SDK_15.2.0_9412b96\components\libraries\strerror;..\source\nRF5_SDK_15.2.0_9412b96\components\libraries\button;..\source\nRF5_SDK_15.2.0_9412b96\components\libraries\bsp;..\source\nRF5_SDK_15.2.0_9412b96\components\libraries\sensorsim;..\source\nRF5_SDK_15.2.0_9412b96\components\libraries\memobj;..\source\nRF5_SDK_15.2.0_9412b96\components\libraries\balloc;..\source\nRF5_SDK_15.2.0_9412b96\components\libraries\atomic_fifo;..\source\nRF5_SDK_15.2.0_9412b96\components\libraries\ringbuf;..\source\nRF5_SDK_15.2.0_9412b96\components\libraries\fstorage;..\source\nRF5_SDK_15.2.0_9412b96\components\libraries\cli;..\source\nRF5_SDK_15.2.0_9412b96\components\libraries\queue;..\source\nRF5_SDK_15.2.0_9412b96\components\libraries\cli\uart;..\source\nRF5_SDK_15.2.0_9412b96\components\libraries\delay;..\source\nRF5_SDK_15.2.0_9412b96\components\libraries\pwr_mgmt;..\source\nRF5_SDK_15.2.0_9412b96\external\fnmatch</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -385,9 +385,19 @@
               <FilePath>..\source\Application\src\main.c</FilePath>
             </File>
             <File>
+              <FileName>cli_cmd.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\source\Application\src\cli_cmd.c</FilePath>
+            </File>
+            <File>
               <FileName>sdk_config.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\source\Application\inc\sdk_config.h</FilePath>
+            </File>
+            <File>
+              <FileName>platform.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\source\Application\inc\platform.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -644,6 +654,11 @@
               <FileType>1</FileType>
               <FilePath>..\source\nRF5_SDK_15.2.0_9412b96\modules\nrfx\drivers\src\nrfx_uarte.c</FilePath>
             </File>
+            <File>
+              <FileName>nrfx_power.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\source\nRF5_SDK_15.2.0_9412b96\modules\nrfx\drivers\src\nrfx_power.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -768,6 +783,26 @@
               <FileName>sensorsim.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\source\nRF5_SDK_15.2.0_9412b96\components\libraries\sensorsim\sensorsim.c</FilePath>
+            </File>
+            <File>
+              <FileName>nrf_cli.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\source\nRF5_SDK_15.2.0_9412b96\components\libraries\cli\nrf_cli.c</FilePath>
+            </File>
+            <File>
+              <FileName>nrf_cli_uart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\source\nRF5_SDK_15.2.0_9412b96\components\libraries\cli\uart\nrf_cli_uart.c</FilePath>
+            </File>
+            <File>
+              <FileName>fnmatch.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\source\nRF5_SDK_15.2.0_9412b96\external\fnmatch\fnmatch.c</FilePath>
+            </File>
+            <File>
+              <FileName>nrf_queue.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\source\nRF5_SDK_15.2.0_9412b96\components\libraries\queue\nrf_queue.c</FilePath>
             </File>
           </Files>
         </Group>
