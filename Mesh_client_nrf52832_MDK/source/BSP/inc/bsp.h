@@ -20,6 +20,7 @@
 
 /* function declares */
 void clock_init(void);
+void log_init(void);
 
 
 #endif  /* __BSP__ */

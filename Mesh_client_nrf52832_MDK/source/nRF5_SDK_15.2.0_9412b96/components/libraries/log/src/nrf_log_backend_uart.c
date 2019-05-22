@@ -72,7 +72,7 @@ static void uart_init(bool async_mode)
 void nrf_log_backend_uart_init(void)
 {
     bool async_mode = NRF_LOG_DEFERRED ? true : false;
-    uart_init(async_mode);
+    //uart_init(async_mode);
 }
 
 static void serial_tx(void const * p_context, char const * p_buffer, size_t len)

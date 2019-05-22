@@ -21,7 +21,6 @@
 extern "C" {
 #endif
 
-#include "nrf_gpio.h"
 
 // LEDs definitions for PCA10040
 #define LEDS_NUMBER    4

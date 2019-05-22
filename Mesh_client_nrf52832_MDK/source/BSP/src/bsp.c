@@ -17,7 +17,9 @@
 #include "bsp.h"
 #include "nordic_common.h"
 #include "nrf_drv_clock.h"
-
+#include "nrf_log.h"
+#include "nrf_log_ctrl.h"
+#include "nrf_log_default_backends.h"
 
 /**
   * @brief  clock_init
@@ -31,8 +33,19 @@ void clock_init(void)
     APP_ERROR_CHECK(err_code);
 }
 
+/**
+  * @brief  log_init
+  * @note   Function for initializing the log.
+  * @param  None
+  * @retval None
+  */
+void log_init(void)
+{
+    ret_code_t err_code = NRF_LOG_INIT(NULL);
+    APP_ERROR_CHECK(err_code);
 
-
+    NRF_LOG_DEFAULT_BACKENDS_INIT();
+}
 
 
 

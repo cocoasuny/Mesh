@@ -16,16 +16,20 @@
 /* Includes ------------------------------------------------------------------*/
 #include "app_freertos.h"
 #include "cli_cmd.h"
+#include "bsp.h"
+#include "nrf_log.h"
+#include "nrf_log_ctrl.h"
+#include "nrf_log_default_backends.h"
 
 
 /* private variable declare --------------------------------------------------*/
 static TaskHandle_t m_logger_thread;                                /**< Definition of Logger thread. */
-
+static TaskHandle_t m_measurement_thread;                           /**< Definition of measurement thread. */
 
 
 /* private function declare --------------------------------------------------*/
 static void logger_thread(void * arg);
-
+static void measurement_thread(void * arg);
 
 
 
@@ -41,6 +45,12 @@ void task_create(void)
     {
         APP_ERROR_HANDLER(NRF_ERROR_NO_MEM);
     }  
+	
+	/* creat a thread for Measurement */	
+    if (pdPASS != xTaskCreate(measurement_thread, "meas", MEASUREMENT_STACK, NULL, MEASUREMENT_PRIORITY, &m_measurement_thread))
+    {
+        APP_ERROR_HANDLER(NRF_ERROR_NO_MEM);
+    }	
 }
 
 
@@ -55,17 +65,41 @@ void task_create(void)
 static void logger_thread(void * arg)
 {
     UNUSED_PARAMETER(arg);
+	
+	/* init for command line interface */
 	cli_init();
 	cli_start();
-
+	
+	/* init for Log */
+	log_init();
+	
     while (1)
     {
 		cli_process();
+		NRF_LOG_FLUSH();
 		vTaskDelay(50);
+		//vTaskSuspend(NULL); // Suspend myself
     }
 }
 
-
+/**@brief Thread for handling the logger.
+ *
+ * @details This thread is responsible for processing log entries if logs are deferred.
+ *          Thread flushes all log entries and suspends. It is resumed by idle task hook.
+ *
+ * @param[in]   arg   Pointer used for passing some arbitrary information (context) from the
+ *                    osThreadCreate() call to the thread.
+ */
+static void measurement_thread(void * arg)
+{
+    UNUSED_PARAMETER(arg);
+	
+	while(1)
+	{
+		NRF_LOG_INFO("HRS FreeRTOS example started.");
+		vTaskDelay(500);
+	}	
+}
 
 
 
