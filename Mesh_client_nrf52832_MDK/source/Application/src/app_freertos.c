@@ -66,19 +66,18 @@ static void logger_thread(void * arg)
 {
     UNUSED_PARAMETER(arg);
 	
+	/* init for Log(mast init befor Cli,beacase cli used for log) */
+	log_init();
+	
 	/* init for command line interface */
 	cli_init();
 	cli_start();
-	
-	/* init for Log */
-	log_init();
-	
+		
     while (1)
     {
 		cli_process();
 		NRF_LOG_FLUSH();
 		vTaskDelay(50);
-		//vTaskSuspend(NULL); // Suspend myself
     }
 }
 
@@ -96,7 +95,7 @@ static void measurement_thread(void * arg)
 	
 	while(1)
 	{
-		NRF_LOG_INFO("HRS FreeRTOS example started.");
+		//NRF_LOG_INFO("HRS FreeRTOS example started.");
 		vTaskDelay(500);
 	}	
 }
