@@ -36,7 +36,7 @@ task.h is included from an application file. */
 
 #include "FreeRTOS.h"
 #include "task.h"
-#include "queue.h"
+#include "freertos_queue.h"
 #include "timers.h"
 
 #if ( INCLUDE_xTimerPendFunctionCall == 1 ) && ( configUSE_TIMERS == 0 )

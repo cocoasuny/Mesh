@@ -44,7 +44,7 @@
 /* Group of FreeRTOS-related includes. */
 #include "FreeRTOS.h"
 #include "task.h"
-#include "queue.h"
+#include "freertos_queue.h"
 #include "semphr.h"
 
 #define NRF_LOG_MODULE_NAME nrf_sdh_freertos
