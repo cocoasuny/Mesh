@@ -201,7 +201,7 @@
 
 /** Enable logging module. */
 #ifndef NRF_MESH_LOG_ENABLE
-#define NRF_MESH_LOG_ENABLE 1
+#define NRF_MESH_LOG_ENABLE 0
 #endif
 
 /** Default log level. Messages with lower criticality is filtered. */
@@ -222,7 +222,7 @@
 /** The default callback function to use. */
 #ifndef LOG_CALLBACK_DEFAULT
 #if defined(NRF51) || defined(NRF52_SERIES)
-    #define LOG_CALLBACK_DEFAULT log_callback_rtt
+    #define LOG_CALLBACK_DEFAULT log_callback_stdout
 #else
     #define LOG_CALLBACK_DEFAULT log_callback_stdout
 #endif
@@ -447,12 +447,12 @@
 
 /** PB-GATT feature. To be enabled only in combination with linking GATT files. */
 #ifndef MESH_FEATURE_PB_GATT_ENABLED
-#define MESH_FEATURE_PB_GATT_ENABLED 0
+#define MESH_FEATURE_PB_GATT_ENABLED 1
 #endif
 
 /** GATT proxy feature. To be enabled only in combination with linking GATT proxy files. */
 #ifndef MESH_FEATURE_GATT_PROXY_ENABLED
-#define MESH_FEATURE_GATT_PROXY_ENABLED 0
+#define MESH_FEATURE_GATT_PROXY_ENABLED 1
 #endif
 
 /** Indicates if any of GATT-related features is enabled. */

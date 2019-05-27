@@ -91,7 +91,18 @@ typedef struct
 /* Check if app_timer_t variable type can held our app_timer_info_t structure */
 STATIC_ASSERT(sizeof(app_timer_info_t) <= sizeof(app_timer_t));
 
+/* private variable define */	
+static bool    m_is_timer_init = false;     /**< Boolean indicating if app timer has been already initialized. */
 
+/**@brief Function for computing the difference between two RTC1 counter values.
+ *
+ * @return     Number of ticks elapsed from ticks_old to ticks_now.
+ */
+static __INLINE uint32_t ticks_diff_get(uint32_t ticks_now, uint32_t ticks_old)
+{
+    return ((ticks_now - ticks_old) & portNRF_RTC_MAXTICKS);
+}	
+	
 /**
  * @brief Internal callback function for the system timer
  *
@@ -112,6 +123,7 @@ static void app_timer_callback(TimerHandle_t xTimer)
 
 uint32_t app_timer_init(void)
 {
+	m_is_timer_init = true;
     return NRF_SUCCESS;
 }
 
@@ -238,4 +250,21 @@ uint32_t app_timer_stop(app_timer_id_t timer_id)
     pinfo->active = false;
     return NRF_SUCCESS;
 }
+
+bool is_app_timer_init(void)
+{
+    return m_is_timer_init;
+}
+
+uint32_t app_timer_cnt_get(void)
+{
+    return xTaskGetTickCount();
+}
+
+uint32_t app_timer_cnt_diff_compute(uint32_t   ticks_to,
+                                    uint32_t   ticks_from)
+{
+    return ticks_diff_get(ticks_to, ticks_from);
+}
+
 #endif //NRF_MODULE_ENABLED(APP_TIMER)

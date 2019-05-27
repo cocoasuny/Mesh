@@ -42,10 +42,9 @@
 
 #ifndef SDK_CONFIG_H
 #define SDK_CONFIG_H
-// <<< Use Configuration Wizard in Context Menu >>>\n
-#ifdef USE_APP_CONFIG
+
 #include "app_config.h"
-#endif
+
 // <h> Board Support 
 
 #include "platform.h"
