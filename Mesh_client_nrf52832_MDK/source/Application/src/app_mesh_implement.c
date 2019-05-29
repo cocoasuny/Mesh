@@ -1,10 +1,10 @@
 /**
   ****************************************************************************************
-  * @file    bsp.h
+  * @file    app_mesh_implement.c
   * @author  Jason
   * @version V1.0.0
   * @date    2019-5-10
-  * @brief   the header of bsp.c
+  * @brief   the top level implement of ble mesh
   ****************************************************************************************
   * @attention
   *
@@ -14,22 +14,49 @@
   */
 
 /* Includes ------------------------------------------------------------------*/
-#ifndef __BSP__
-#define __BSP__
-
-#include "stdint.h"
-#include <stdarg.h>
-
-/* function declares */
-void clock_init(void);
-void log_init_entity(void);
-void log_callback_default(uint32_t dbg_level, const char * p_filename, uint16_t line,	\
-		uint32_t timestamp, const char * format, va_list arguments);
+#include "app_freertos.h"
 
 
-#endif  /* __BSP__ */
+
+
+/**@brief Thread for handling the ble mesh.
+ *
+ * @details This thread is responsible for processing top level ble mesh
+ *
+ * @param[in]   arg   Pointer used for passing some arbitrary information (context) from the
+ *                    osThreadCreate() call to the thread.
+ */
+void ble_mesh_top_thread(void * arg)
+{
+    UNUSED_PARAMETER(arg);
+	
+	
+	while(1)
+	{
+	
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /************************ (C) COPYRIGHT 2019 ShenZhen DBGJ Co., Ltd. *****END OF FILE****/
+
 
 
 

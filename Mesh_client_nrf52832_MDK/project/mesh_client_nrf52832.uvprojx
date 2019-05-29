@@ -390,6 +390,11 @@
               <FilePath>..\source\Application\src\app_freertos.c</FilePath>
             </File>
             <File>
+              <FileName>app_mesh_implement.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\source\Application\src\app_mesh_implement.c</FilePath>
+            </File>
+            <File>
               <FileName>cli_cmd.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\source\Application\src\cli_cmd.c</FilePath>

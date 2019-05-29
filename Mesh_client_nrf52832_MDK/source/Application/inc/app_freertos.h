@@ -28,8 +28,8 @@
 /* task stack and priority define(the lower number,the lower priority) */
 #define TASK_LOG_STACK                                  1024
 #define TASK_LOG_PRIORITY					            2				
-#define BLE_TOP_IMPLEMENTATION_STACK					256
-#define BLE_TOP_IMPLEMENTATION_PRIORITY					4
+#define BLE_MESH_STACK									256
+#define BLE_MESH_PRIORITY								4
 #define MEASUREMENT_STACK                               256
 #define MEASUREMENT_PRIORITY                            3
 

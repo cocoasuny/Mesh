@@ -1,10 +1,10 @@
 /**
   ****************************************************************************************
-  * @file    bsp.h
+  * @file    app_mesh_implement.h
   * @author  Jason
   * @version V1.0.0
   * @date    2019-5-10
-  * @brief   the header of bsp.c
+  * @brief   the header of app_mesh_implement.c
   ****************************************************************************************
   * @attention
   *
@@ -14,20 +14,15 @@
   */
 
 /* Includes ------------------------------------------------------------------*/
-#ifndef __BSP__
-#define __BSP__
+#ifndef __APP_MESH_IMPLEMENT__
+#define __APP_MESH_IMPLEMENT__
 
-#include "stdint.h"
-#include <stdarg.h>
 
 /* function declares */
-void clock_init(void);
-void log_init_entity(void);
-void log_callback_default(uint32_t dbg_level, const char * p_filename, uint16_t line,	\
-		uint32_t timestamp, const char * format, va_list arguments);
+void ble_mesh_top_thread(void * arg);
 
 
-#endif  /* __BSP__ */
+#endif  /* __APP_MESH_IMPLEMENT__ */
 
 /************************ (C) COPYRIGHT 2019 ShenZhen DBGJ Co., Ltd. *****END OF FILE****/
 

@@ -39,12 +39,26 @@ void clock_init(void)
   * @param  None
   * @retval None
   */
-void log_init(void)
+void log_init_entity(void)
 {
     ret_code_t err_code = NRF_LOG_INIT(NULL);
     APP_ERROR_CHECK(err_code);
 }
 
+/**
+  * @brief  log_callback_cli
+  * @note   log output by cli module
+  * @param  None
+  * @retval None
+  */
+void log_callback_default(uint32_t dbg_level, const char * p_filename, uint16_t line,uint32_t timestamp, const char * format, va_list arguments)
+{
+    char buf[100] = {0};
+    
+    memset(buf,0,sizeof(buf));
+    vsprintf(buf,format,arguments);
+    NRF_LOG_INFO("%s",buf);
+}
 
 
 

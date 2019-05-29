@@ -20,11 +20,13 @@
 #include "nrf_log.h"
 #include "nrf_log_ctrl.h"
 #include "nrf_log_default_backends.h"
-
+#include "app_mesh_implement.h"
+#include "log.h"
 
 /* private variable declare --------------------------------------------------*/
 static TaskHandle_t m_logger_thread;                                /**< Definition of Logger thread. */
 static TaskHandle_t m_measurement_thread;                           /**< Definition of measurement thread. */
+static TaskHandle_t m_ble_mesh_thread;                           	/**< Definition of ble mesh thread. */
 
 
 /* private function declare --------------------------------------------------*/
@@ -51,6 +53,12 @@ void task_create(void)
     {
         APP_ERROR_HANDLER(NRF_ERROR_NO_MEM);
     }	
+	
+	/* creat a thread for Measurement */	
+    if (pdPASS != xTaskCreate(ble_mesh_top_thread, "mesh", BLE_MESH_STACK, NULL, BLE_MESH_PRIORITY, &m_ble_mesh_thread))
+    {
+        APP_ERROR_HANDLER(NRF_ERROR_NO_MEM);
+    }	
 }
 
 
@@ -67,7 +75,10 @@ static void logger_thread(void * arg)
     UNUSED_PARAMETER(arg);
 	
 	/* init for Log(mast init befor Cli,beacase cli used for log) */
-	log_init();
+	log_init_entity();
+	
+    __LOG_INIT(LOG_SRC_APP | LOG_SRC_ACCESS | LOG_SRC_BEARER, LOG_LEVEL_INFO, LOG_CALLBACK_DEFAULT);
+    __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "----- BLE Mesh Light Switch Client Demo -----\n");	
 	
 	/* init for command line interface */
 	cli_init();
@@ -96,6 +107,7 @@ static void measurement_thread(void * arg)
 	while(1)
 	{
 		//NRF_LOG_INFO("HRS FreeRTOS example started.");
+		//__LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "----- BLE Mesh Light Switch Client Demo -----\n");	
 		vTaskDelay(500);
 	}	
 }

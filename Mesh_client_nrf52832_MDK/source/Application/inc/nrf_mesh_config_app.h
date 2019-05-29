@@ -38,6 +38,8 @@
 #ifndef NRF_MESH_CONFIG_APP_H__
 #define NRF_MESH_CONFIG_APP_H__
 
+#include "bsp.h"
+
 /**
  * Unit test mock for nrf_mesh_config_app.h
  *
@@ -102,6 +104,11 @@
 
 #ifndef ACCESS_RELIABLE_TRANSFER_COUNT
 #define ACCESS_RELIABLE_TRANSFER_COUNT (ACCESS_MODEL_COUNT)
+#endif
+
+/** The default callback function to use. */
+#ifndef LOG_CALLBACK_DEFAULT
+    #define LOG_CALLBACK_DEFAULT log_callback_default
 #endif
 
 /** @} */

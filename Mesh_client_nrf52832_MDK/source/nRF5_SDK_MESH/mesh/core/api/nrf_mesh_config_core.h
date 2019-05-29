@@ -39,9 +39,7 @@
 #define NRF_MESH_CONFIG_CORE_H__
 
 #include "nrf_mesh_defines.h"
-#ifdef CONFIG_APP_IN_CORE
 #include "nrf_mesh_config_app.h"
-#endif
 
 /**
  * @defgroup NRF_MESH_CONFIG_CORE Compile time configuration
@@ -201,7 +199,7 @@
 
 /** Enable logging module. */
 #ifndef NRF_MESH_LOG_ENABLE
-#define NRF_MESH_LOG_ENABLE 0
+#define NRF_MESH_LOG_ENABLE 1
 #endif
 
 /** Default log level. Messages with lower criticality is filtered. */
