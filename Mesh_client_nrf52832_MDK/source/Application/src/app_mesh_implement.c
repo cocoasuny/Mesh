@@ -15,7 +15,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "app_freertos.h"
-
+#include "ble_softdevice_support.h"
 
 
 
@@ -29,6 +29,8 @@
 void ble_mesh_top_thread(void * arg)
 {
     UNUSED_PARAMETER(arg);
+	
+	 ble_stack_init();
 	
 	
 	while(1)
